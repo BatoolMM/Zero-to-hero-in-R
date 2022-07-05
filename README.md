@@ -1,13 +1,16 @@
-# FIXME Project Name
+# From Zero to hero
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-FIXME description about the Programme
+This is a course designed by Batool Almarzouq and delivered in JeelAIDM
+
+- **Week1**: Introduction to R and RStudio
+- **Week2**: Introduction to Git/GitHub
 
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
 - If you would like to complain/suggest/contribute to this project, feel free to open a issue :heart_decoration:
-- Please follow our [FIXME - contributing guidelines](https://github.com/Open-Science-Community-Saudi-Arabia/FIXME/blob/main/CONTRIBUTING.md). 
+- Please follow our [contributing guidelines](https://github.com/BatoolMM/from-Zero-to-hero-in-r/blob/main/CONTRIBUTING.md). 
 
 ## License
 
