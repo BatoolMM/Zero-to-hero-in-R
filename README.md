@@ -8,7 +8,7 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 - **Week2**: [Introduction to Git/GitHub](https://docs.google.com/presentation/d/1Og1ALvmPD-SIjEoASwb9FIZvZNMkFuvKBuQwD0Vcsng/edit?usp=sharing)
 
 ## Partcipants in the course:
-
+- Abdullah Sami
 
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
