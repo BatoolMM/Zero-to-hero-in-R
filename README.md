@@ -7,6 +7,9 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 - **Week1**: Introduction to R and RStudio
 - **Week2**: [Introduction to Git/GitHub](https://docs.google.com/presentation/d/1Og1ALvmPD-SIjEoASwb9FIZvZNMkFuvKBuQwD0Vcsng/edit?usp=sharing)
 
+## Partcipants in the course:
+
+
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
 - If you would like to complain/suggest/contribute to this project, feel free to open an issue :heart_decoration:
