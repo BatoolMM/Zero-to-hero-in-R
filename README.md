@@ -9,6 +9,7 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 
 ## Partcipants in the course:
 
+- Mona Alsharif 
 - basma almllah
 - Hani Almohammadi
 - Buthynah
