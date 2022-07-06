@@ -10,11 +10,13 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 ## Partcipants in the course:
 
 - Mona Alsharif 
+- Abdullah Sami
 - basma almllah
 - Hani Almohammadi
 - Buthynah
 - KHADEEJAH ALASLANI
 - Fatimah Abuali
+
 
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
