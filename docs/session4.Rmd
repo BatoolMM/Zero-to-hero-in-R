@@ -1,0 +1,81 @@
+---
+title: "Week 2, Session 4"
+author: "Batool Almarzouq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Data Types
+
+This ***is***
+
+![](images/Screenshot%202022-07-06%20at%2008.30.27.png)
+
+```{r}
+x <- 3
+typeof(x)
+
+```
+
+```{r}
+y <- "Batool"
+typeof(y)
+
+z <- "5"
+typeof(z)
+
+```
+
+```{r}
+is.character(z)
+is.double(y)
+
+```
+
+
+## Section 2
+
+```{r}
+
+q <- FALSE
+
+typeof(q)
+
+```
+
+## Section 3
+
+```{r}
+
+c <- 2/0
+
+t <- NA
+
+typeof(t)
+
+```
+
+### Section 4
+
+```{r}
+
+v <- c(1,2.4,6,9)
+typeof(v)
+
+b <- c("b", 2, 4, "c")
+typeof(b)
+
+m <- c(TRUE, 3, 7, 4.9)
+typeof(m)
+
+w <- seq(1, 20)
+
+```
+
+
+```{r}
+
+e <- seq(4, 20, by=2)
+
+```
+
