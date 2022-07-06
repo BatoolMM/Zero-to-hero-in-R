@@ -13,7 +13,7 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 - Abdullah Sami
 - basma almllah
 - Hani Almohammadi
-- Buthynah
+- Buthaynah Alhumaidan
 - KHADEEJAH ALASLANI
 - Fatimah Abuali
 - Anhal
