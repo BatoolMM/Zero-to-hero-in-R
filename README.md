@@ -17,7 +17,7 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 - KHADEEJAH ALASLANI
 - Fatimah Abuali
 - Anhal
-
+- Seham
 
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
