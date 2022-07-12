@@ -1,0 +1,45 @@
+---
+title: "Session5_Batool"
+author: "Batool Almarzouq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import Data
+
+```{r}
+library(tidyverse)
+library(here)
+
+```
+
+```{r}
+
+interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
+
+```
+
+
+```{r}
+glimpse(interviews)
+
+wall_type <- interviews$respondent_wall_type
+
+length(unique(wall_type))
+
+```
+
+
+```{r}
+
+small_data <- interviews %>%
+  select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God", rooms > 1)
+  
+
+```
+
