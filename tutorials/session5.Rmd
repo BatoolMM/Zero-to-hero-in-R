@@ -75,6 +75,8 @@ again the SAFI dataset that we downloaded earlier.
 library(tidyverse)
 library(here)
 
+## look into th working directory
+
 interviews <- read_csv(here("data", "SAFI_clean.csv"), na = "NULL")
 
 ## inspect the data

@@ -1,5 +1,5 @@
 ---
-title: "session5-empty"
+title: "Session 5 Summary"
 author: "Batool Almarzouq"
 date: "`r Sys.Date()`"
 output: html_document
@@ -18,11 +18,16 @@ library(here)
 
 ```
 
+## Working directory
+
+```{r}
+getwd()
+```
+
 ## Loading the data
 
 ```{r}
 interviews <- read_csv(here("data", "SAFI_clean.csv"), na = "NULL")
-
 
 ```
 
@@ -331,8 +336,3 @@ interviews %>%
 > {: .solution}
 {: .challenge}
 
-
-TODO:
-- Understand the dataset
-- Explain here and working directory
-- 

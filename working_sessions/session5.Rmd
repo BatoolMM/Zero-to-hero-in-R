@@ -1,0 +1,36 @@
+---
+title: "Working Session 5"
+author: "Batool Almarzouq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## load the library
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+## Working directory
+
+```{r}
+getwd()
+
+```
+
+
+## Load the Dataset
+
+```{r}
+
+read_csv(here("data", "SAFI_clean.csv"))
+
+```
+
+TODO:
+- Difference between Null and NA
