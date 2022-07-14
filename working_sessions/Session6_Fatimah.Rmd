@@ -1,0 +1,96 @@
+---
+title: "Session6_Fatimah"
+author: "Fatimah"
+date: '2022-07-14'
+output: html_document
+---
+
+## Import Data
+
+```{r}
+library(tidyverse)
+library(here)
+
+```
+
+```{r}
+
+interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
+
+```
+
+
+```{r}
+glimpse(interviews)
+
+wall_type <- interviews$respondent_wall_type
+
+length(unique(wall_type))
+
+```
+
+
+```{r}
+
+small_data <- interviews %>%
+  select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God" & rooms > 1)
+  
+
+```
+# Ex1
+Using pipes, subset the interviews data to include interviews where respondents were members of an irrigation association (memb_assoc) and retain only the columns affect_conflicts, liv_count, and no_meals
+```{r}
+small_data3 <- interviews %>% 
+  select(memb_assoc,affect_conflicts,liv_count,no_meals) %>%
+  filter(memb_assoc == "yes")
+```
+
+### Add new column
+##### **round** to remove the dicemels
+
+```{r}
+small_data4 <- interviews %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+```
+
+```{r}
+is.na(interviews$affect_conflicts)
+```
+
+
+### to filter NA
+
+```{r}
+small_data4.1 <- interviews %>% 
+  filter(!is.na(affect_conflicts)) %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+  
+```
+# Ex2
+Create a new dataframe from the interviews data that meets the following criteria:
+  contains a new column called total_meals containing a value that is equal to the total number of meals served in the household per day on average (no_membrs times no_meals). 
+Include only the rows where total_meals is greater than 20 should be shown in the final dataframe.
+```{r}
+small_data5 <- interviews %>% 
+  mutate(total_meals = no_meals * no_membrs) %>% 
+  filter(total_meals > 20)
+```
+
+## Group by specific character >>
+
+```{r}
+small_data6 <-  interviews %>% 
+  group_by(village) %>% 
+  summarise(mean(no_membrs))
+
+```
+
+```{r}
+small_data6 <-  interviews %>% 
+  group_by(village) %>% 
+  summarise(mean=mean(no_membrs), max= max(no_membrs)) %>% 
+  ungroup()
+
+```
+
