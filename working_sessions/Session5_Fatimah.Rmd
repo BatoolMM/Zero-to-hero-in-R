@@ -4,27 +4,54 @@ author: "Fatimah"
 date: '2022-07-12'
 output: html_document
 ---
+## Import Data
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+library(tidyverse)
+library(here)
+
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r}
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+interviews <- read.csv(here("data","SAFI_clean.csv"), na ="NULL")
 
-```{r cars}
-summary(cars)
+
+
+
 ```
 
-## Including Plots
+```{r}
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+glimpse(interviews)
+
+
+wall_type <- interviews$respondent_wall_type
+
+unique(wall_type)
+
+length(unique(wall_type))
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+small_data <- interviews %>% 
+  select(village,no_membrs, months_lack_food)
+
+```
+
+```{r}
+small_data1 <- interviews %>% 
+  select(-c(rooms,liv_count))
+```
+
+```{r}
+small_data2 <- interviews %>% 
+  select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God",
+         rooms > 1)
+```
+
