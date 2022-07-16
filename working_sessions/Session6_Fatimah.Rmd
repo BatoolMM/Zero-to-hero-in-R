@@ -2,7 +2,7 @@
 title: "Session6_Fatimah"
 author: "Fatimah"
 date: '2022-07-14'
-output: html_document
+output: word_document
 ---
 
 ## Import Data
@@ -19,7 +19,6 @@ interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
 
 ```
 
-
 ```{r}
 glimpse(interviews)
 
@@ -29,7 +28,6 @@ length(unique(wall_type))
 
 ```
 
-
 ```{r}
 
 small_data <- interviews %>%
@@ -38,8 +36,11 @@ small_data <- interviews %>%
   
 
 ```
+
 # Ex1
+
 Using pipes, subset the interviews data to include interviews where respondents were members of an irrigation association (memb_assoc) and retain only the columns affect_conflicts, liv_count, and no_meals
+
 ```{r}
 small_data3 <- interviews %>% 
   select(memb_assoc,affect_conflicts,liv_count,no_meals) %>%
@@ -47,6 +48,7 @@ small_data3 <- interviews %>%
 ```
 
 ### Add new column
+
 ##### **round** to remove the dicemels
 
 ```{r}
@@ -58,7 +60,6 @@ small_data4 <- interviews %>%
 is.na(interviews$affect_conflicts)
 ```
 
-
 ### to filter NA
 
 ```{r}
@@ -67,17 +68,18 @@ small_data4.1 <- interviews %>%
   mutate(people_per_room = round(no_membrs / rooms))
   
 ```
+
 # Ex2
-Create a new dataframe from the interviews data that meets the following criteria:
-  contains a new column called total_meals containing a value that is equal to the total number of meals served in the household per day on average (no_membrs times no_meals). 
-Include only the rows where total_meals is greater than 20 should be shown in the final dataframe.
+
+Create a new dataframe from the interviews data that meets the following criteria: contains a new column called total_meals containing a value that is equal to the total number of meals served in the household per day on average (no_membrs times no_meals). Include only the rows where total_meals is greater than 20 should be shown in the final dataframe.
+
 ```{r}
 small_data5 <- interviews %>% 
   mutate(total_meals = no_meals * no_membrs) %>% 
   filter(total_meals > 20)
 ```
 
-## Group by specific character >>
+## Group by specific character \>\>
 
 ```{r}
 small_data6 <-  interviews %>% 
@@ -93,4 +95,3 @@ small_data6 <-  interviews %>%
   ungroup()
 
 ```
-
