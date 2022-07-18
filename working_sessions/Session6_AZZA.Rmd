@@ -1,7 +1,7 @@
 ---
-title: "Session5_AZZA"
+title: "Sessions6_AZZA"
 author: "AZZA ABDULLAH S. ALGHAMDI"
-date: '2022-07-16'
+date: '2022-07-18'
 output: html_document
 ---
 
@@ -12,7 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Import Data
 
 ```{r}
-
 library(tidyverse)
 library(here)
 
@@ -22,9 +21,10 @@ library(here)
 
 interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
 
-
 ```
+
 ```{r}
+
 glimpse(interviews)
 
 wall_type <- interviews$respondent_wall_type
@@ -37,7 +37,7 @@ length(unique(wall_type))
 
 ```{r}
 
-small_data <- interviews %>% 
+small_data1 <- interviews %>% 
   select(village:respondent_wall_type, rooms) %>% 
   filter(village == "God" & rooms > 1) 
 
@@ -61,16 +61,34 @@ filter(total_meals > 20)
 
 ```{r}
 
-interview_total_meals <- interviews %>%
-  mutate(total_meals = no_membrs * no_meals) %>%
-  filter(total_meals > 20)
-  
+data <- interviews %>%
+  select(affect_conflicts, memb_assoc, liv_count, no_meals) %>%
+  filter(memb_assoc == "yes")
+
 ```
 
 ```{r}
 
-interview_total_meals <- mutate(interviews, total_meals = no_membrs * no_meals)
+small_data4 <- interviews %>%
+  mutate(people_per_room = round(no_membrs / rooms))
 
-y <- filter(interview_total_meals, total_meals > 20)
 ```
+
+```{r}
+
+x <- interviews %>%
+  filter(!is.na(affect_conflicts)) %>%
+  mutate(people_per_room = round(no_membrs / rooms))
+
+```
+
+```{r}
+
+groupd <- interviews %>%
+  group_by(village) %>%
+  summarise(mean(no_membrs))
+  ungroup() 
+
+```
+
 
