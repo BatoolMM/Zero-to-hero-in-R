@@ -21,6 +21,7 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 - Seham
 - Ahmad
 - AZZA ABDULLAH S. ALGHAMDI
+- Iman Al Hasani
 
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
