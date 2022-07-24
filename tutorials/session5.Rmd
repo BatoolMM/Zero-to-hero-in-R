@@ -86,6 +86,24 @@ interviews
 # view(interviews)
 ```
 
+## How to select one column and get the unque value
+
+```{r}
+
+unique(interviews$village)
+
+```
+
+Ex.
+
+```{r}
+#What is the unique value inrespondent_wall_type?
+
+length(unique(interviews$respondent_wall_type))
+
+```
+
+
 We're going to learn some of the most common **`dplyr`** functions:
 
 - `select()`: subset columns
@@ -108,8 +126,11 @@ subsetting, using a package (`dplyr`) instead of R's base functions.
 ```{r, results = 'hide', purl = FALSE}
 # to select columns throughout the dataframe
 select(interviews, village, no_membrs, months_lack_food)
-# to do the same thing with subsetting
-interviews[c("village","no_membrs","months_lack_food")]
+
+# to do the same thing with subtracting
+
+small_data <- select(interviews,-c(village, rooms))
+
 # to select a series of connected columns
 select(interviews, village:respondent_wall_type)
 ```
@@ -134,9 +155,9 @@ commas:
 
 # filters observations with "and" operator (comma)
 # output dataframe satisfies ALL specified conditions
-filter(interviews, village == "Chirodzo", 
-                   rooms > 1, 
-                   no_meals > 2)
+filter(interviews, rooms > 1,
+       village == "Chirodzo", 
+      no_meals > 2)
 ```
 
 We can also form "and" statements with the `&` operator instead of commas:

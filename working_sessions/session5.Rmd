@@ -16,21 +16,47 @@ library(tidyverse)
 library(here)
 ```
 
-## Working directory
-
-```{r}
-getwd()
-
-```
-
 
 ## Load the Dataset
 
 ```{r}
 
-read_csv(here("data", "SAFI_clean.csv"))
+interviews <- read_csv(here("data", "SAFI_clean.csv"))
 
 ```
 
-TODO:
-- Difference between Null and NA
+## Inspect the dataset
+
+```{r}
+glimpse(interviews)
+```
+
+```{r}
+
+
+villages <- interviews$village
+
+unique(villages)
+
+```
+
+
+```{r}
+
+small_data_A<- interviews %>% 
+  select(village, no_membrs, months_lack_food, rooms) %>% 
+  filter(village == "God", rooms > 1)
+
+
+interviews %>% 
+  filter(village == "God" | village == "Ruaca")
+```
+
+```{r}
+
+interviews %>% 
+  filter(is.na())
+  mutate(people_per_room = no_membrs / rooms)
+
+```
+
