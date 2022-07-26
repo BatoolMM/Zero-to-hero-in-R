@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Import Data
 
 ```{r}
+
 library(tidyverse)
 library(here)
 
@@ -23,6 +24,7 @@ interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
 
 ```
 
+## Look further into the data
 
 ```{r}
 glimpse(interviews)
@@ -33,13 +35,71 @@ length(unique(wall_type))
 
 ```
 
+## Select and Filter the Data
 
 ```{r}
 
 small_data <- interviews %>%
   select(village:respondent_wall_type, rooms) %>% 
-  filter(village == "God", rooms > 1)
+  filter(village == "God" & rooms > 1)
   
+```
+
+```{r}
+
+data <- interviews %>% 
+  select(affect_conflicts, memb_assoc,liv_count, no_meals) %>% 
+  filter(memb_assoc == "yes") 
+
+
+```
+
+
+```{r}
+
+filter(memb_assoc == "yes")
+
+```
+
+```{r}
+
+small_data <- interviews %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+
+```
+
+
+
+```{r}
+x <- interviews %>% 
+  filter(!is.na(affect_conflicts)) %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+
+```
+
+```{r}
+
+interview_total_meals <- interviews %>% 
+  mutate(total_meals = no_membrs * no_meals) %>% 
+  filter(total_meals > 20)
+
+```
+
+```{r}
+
+interview_total_meals <- mutate(interviews, total_meals = no_membrs * no_meals)
+
+y  <- filter(interview_total_meals, total_meals > 20)
+
+```
+
+
+```{r}
+
+grouped <- interviews %>% 
+  group_by(village) %>% 
+  summarise(mean = mean(no_membrs), max(no_membrs)) %>% 
+  ungroup()
 
 ```
 
