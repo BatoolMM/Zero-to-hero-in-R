@@ -1,0 +1,57 @@
+---
+title: "Session5_Fatimah"
+author: "Fatimah"
+date: '2022-07-12'
+output: html_document
+---
+## Import Data
+
+```{r}
+library(tidyverse)
+library(here)
+
+```
+
+
+```{r}
+
+interviews <- read.csv(here("data","SAFI_clean.csv"), na ="NULL")
+
+
+
+
+```
+
+```{r}
+
+
+glimpse(interviews)
+
+
+wall_type <- interviews$respondent_wall_type
+
+unique(wall_type)
+
+length(unique(wall_type))
+```
+
+
+
+```{r}
+small_data <- interviews %>% 
+  select(village,no_membrs, months_lack_food)
+
+```
+
+```{r}
+small_data1 <- interviews %>% 
+  select(-c(rooms,liv_count))
+```
+
+```{r}
+small_data2 <- interviews %>% 
+  select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God",
+         rooms > 1)
+```
+
