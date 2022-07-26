@@ -1,0 +1,142 @@
+---
+title: "draft"
+author: "Batool Almarzouq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## load librraies
+
+```{r}
+library(tidyverse)
+```
+
+## Exploring built in datasets
+
+```{r}
+data()
+
+BOD 
+
+```
+
+## Exploring datasets from packages
+
+```{r}
+library(gapminder)
+
+gapminder
+```
+## Exploring dataset from web
+```{r}
+
+ca <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/ca.csv") 
+
+```
+
+```{r}
+glimpse(ca)
+```
+## First plot
+
+```{r}
+ggplot(ca, aes(x=year, y = visitors, color = park_name)) +
+  geom_point()
+
+```
+## More arguments in geoms
+```{r}
+ggplot(ca, aes(x=year, y = visitors, color = park_name)) +
+  geom_point(alpha= 0.5) +
+  geom_smooth()
+
+```
+## customisation theme
+```{r}
+ggplot(ca, aes(x=year, y = visitors, color = park_name)) +
+  geom_point(alpha= 0.5) +
+  geom_smooth() + 
+  labs(x = "Year",
+       y = "Visitation",
+       title = "California National Park Visitation") +
+  theme_bw() +
+  theme(
+    legend.title = element_blank(), 
+    axis.title.x = element_text(angle=45, size =20))
+
+
+```
+
+```{r}
+ggplot(data = ca, aes(x = year, y = visitors, color = code)) +
+    geom_point() +
+  facet_wrap(~ code, scales = "free") +
+  theme_bw()
+
+```
+
+```{r}
+# Southeast US National Parks
+se <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/se.csv")
+
+```
+geom is the geometrical object that a plot uses to represent data. People often describe plots by the type of geom that the plot uses. For example, bar charts use bar geoms, line charts use line geoms, boxplots use boxplot geoms, and so on. Scatterplots break the trend; they use the point geom. You can use different geoms to plot the same data. To change the geom in your plot, change the geom function that you add to ggplot(). Let’s look at a few ways of viewing the distribution of annual visitation (visitors) for each park (park_name).
+
+
+```{r}
+# flip
+# add colour
+# take out the legend
+
+ggplot(data = se) + 
+  geom_jitter(aes(x = park_name, y = visitors, color = park_name, alpha = 0.5)) +
+  coord_flip() +
+  theme_bw() +
+  theme(
+    legend.position = "none"
+  )
+```
+
+```{r}
+visit_16 <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/visit_16.csv")
+
+x <- ggplot(data = visit_16, aes(x = state, y = visitors, fill = park_name)) + 
+  geom_bar(stat = "identity", position = "dodge")
+
+
+```
+
+```{r}
+library(plotly)
+
+ggplotly(x)
+```
+
+
+```{r}
+
+plot <- ggplot(data = se) + 
+  geom_jitter(aes(x = park_name, y = visitors, color = park_name, alpha = 0.5)) +
+  coord_flip() +
+  theme_bw() +
+  theme(
+    legend.position = "none"
+  )
+
+ggplotly(plot)
+```
+
+## Save the plot
+After creating your plot, you can save it to a file in your favorite format. The Export tab in the Plot pane in RStudio will save your plots at low resolution, which will not be accepted by many journals and will not scale well for posters.
+
+Instead, use the ggsave() function, which allows you easily change the dimension and resolution of your plot by adjusting the appropriate arguments (width, height and dpi):
+
+```{r}
+ggsave(here("results","plot.png"), x, width = 15, height = 10)
+
+```
+

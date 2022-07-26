@@ -103,3 +103,72 @@ grouped <- interviews %>%
 
 ```
 
+How many households in the survey have an average of two meals per day? Three meals per day? Are there any other numbers of meals represented?
+
+```{r}
+interviews %>%
+  group_by(village) %>%
+  summarize(
+      mean_no_membrs = mean(no_membrs),
+      min_no_membrs = min(no_membrs),
+      max_no_membrs = max(no_membrs),
+      n = n()
+  )
+
+```
+
+```{r}
+interviews %>%
+  group_by(village) %>%
+  summarise(
+      mean_no_membrs = mean(no_membrs),
+      min_no_membrs = min(no_membrs),
+      max_no_membrs = max(no_membrs),
+      count = n()
+  )
+
+```
+
+```{r}
+interviews %>%
+  group_by(village) %>% 
+  summarise(mean = mean(no_membrs))
+```
+
+```{r}
+
+interviews %>%
+  group_by(village) %>% 
+  count()
+```
+
+```{r}
+
+interviews %>%
+  group_by(no_meals) %>%
+  summarise(
+      count = n()
+  )
+```
+
+```{r}
+
+interviews %>%
+  group_by(no_meals) %>%
+  count()
+```
+```{r}
+
+interview_meals_summ <- interviews %>% 
+  group_by(no_meals) %>% 
+  summarise(
+    count = n()
+  )
+
+
+interview_meals_count <- interviews %>% 
+  group_by(no_meals) %>% 
+  count()
+
+```
+
