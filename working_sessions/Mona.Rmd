@@ -1,5 +1,5 @@
 ---
-title: "session_5"
+title: "session_5_and_6"
 author: "Mona"
 date: "27/07/2022"
 output: html_document
