@@ -1,0 +1,104 @@
+---
+title: "Mona-training"
+author: "Mona"
+date: "27/07/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+library(tidyverse)
+library(here)
+
+```
+
+```{r}
+read_csv(here("data","SAFI_clean.csv"))
+
+```
+
+```{r}
+interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
+
+
+```
+
+```{r}
+glimpse(interviews)
+wall_type <- interviews$respondent_wall_type
+length(unique(wall_type))
+
+
+```
+
+```{r}
+small_data <- interviews %>%
+select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God" & rooms > 1)  
+
+
+```
+
+```{r}
+data <- interviews %>% 
+  select(affect_conflicts, memb_assoc,liv_count, no_meals) %>% 
+  filter(memb_assoc == "yes") 
+
+```
+
+```{r}
+small_data <- interviews %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+
+```
+
+```{r}
+x <- interviews %>% 
+  filter(!is.na(affect_conflicts)) %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+
+```
+
+```{r}
+interview_total_meals <- interviews %>% 
+  mutate(total_meals = no_membrs * no_meals) %>% 
+  filter(total_meals > 20)
+```
+
+```{r}
+interview_total_meals <- mutate(interviews, total_meals = no_membrs * no_meals)
+y  <- filter(interview_total_meals, total_meals > 20)
+
+
+```
+
+```{r}
+grouped <- interviews %>% 
+  group_by(village) %>% 
+  summarise(mean = mean(no_membrs), max(no_membrs)) %>% 
+  ungroup()
+
+```
