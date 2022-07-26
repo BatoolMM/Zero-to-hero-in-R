@@ -1,0 +1,83 @@
+---
+title: "Lecture6-Anhal"
+output: html_document
+date: '2022-07-16'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import Data
+
+```{r}
+
+library(tidyverse)
+library(here)
+
+
+```
+
+```{r}
+library(readr)
+SAFI_clean <- read_csv("data/SAFI_clean.csv")
+View(SAFI_clean)
+
+interviwes <- read_csv(here("data/SAFI_clean.csv"), na="NULL")
+
+
+```
+```{r}
+glimpse(interviwes)
+
+wall_type <- interviwes$respondent_wall_type
+
+length(unique(wall_type))
+
+```
+
+```{r}
+small_data <- interviwes %>% 
+ 
+ select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God", rooms > 1)
+```
+
+```{r}
+
+ data <- interviwes %>% 
+  select(memb_assoc, affect_conflicts, liv_count,no_meals)%>% 
+
+  filter(memb_assoc == "yes")
+
+```
+
+```{r}
+
+small_data <- interviwes %>%
+  mutate(pepole_per_room =round(no_membrs / rooms))
+
+```
+
+```{r}
+n <- interviwes %>% 
+  filter(!is.na(affect_conflicts)) %>%
+ mutate(pepole_per_room =round(no_membrs / rooms))
+
+```
+
+```{r}
+interview_total_meals <- interviwes %>% 
+   mutate(total_meals =no_membrs * no_meals) %>%
+  filter(total_meals > 20) 
+
+```
+
+``
+```{r}
+village <- interviwes %>% 
+  group_by(village) %>%
+  summarise(mean=mean(no_membrs),max= max(no_membrs), min=min(no_membrs))
+ungroup()
+```
+
