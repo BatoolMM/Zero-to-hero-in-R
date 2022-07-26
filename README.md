@@ -21,6 +21,7 @@ This is a course designed by Batool Almarzouq and delivered in JeelAIDM
 - Anhal
 - Seham
 - Ahmad
+- Ghozayel Alotaibi
 - AZZA ABDULLAH S. ALGHAMDI
 - Iman Al Hasani
 
