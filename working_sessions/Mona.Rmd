@@ -100,14 +100,4 @@ grouped <- interviews %>%
   group_by(village) %>% 
   summarise(mean = mean(no_membrs), max(no_membrs)) %>% 
   ungroup()
-
-```
-
-```{r}
-grouped <- interviews %>% 
-  group_by(village) %>% 
-  summarise(mean = mean(no_membrs), max(no_membrs)) %>% 
-  ungroup()
-
-
 ```
