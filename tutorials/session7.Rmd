@@ -136,7 +136,7 @@ After creating your plot, you can save it to a file in your favorite format. The
 Instead, use the ggsave() function, which allows you easily change the dimension and resolution of your plot by adjusting the appropriate arguments (width, height and dpi):
 
 ```{r}
-ggsave(here("results","plot.png"), x, width = 15, height = 10)
+#ggsave(here("results","plot.png"), x, width = 15, height = 10)
 
 ```
 
