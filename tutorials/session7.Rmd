@@ -2,7 +2,9 @@
 title: "draft"
 author: "Batool Almarzouq"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  html_document:
+    theme: darkly
 ---
 
 ```{r setup, include=FALSE}
@@ -79,6 +81,35 @@ ggplot(data = ca, aes(x = year, y = visitors, color = code)) +
 
 ```
 
+## Gapminder Data
+
+```{r}
+library(gapminder)
+
+gapminder %>% 
+  ggplot(aes(x = log(gdpPercap), y = lifeExp, col = year, size = pop)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = lm) +
+  facet_wrap( ~ continent, scales = "free") +
+  theme_bw()
+
+```
+```{r}
+
+gapminder %>% 
+  ggplot(aes( x= continent, y = lifeExp, col = continent)) +
+  geom_boxplot() +
+  geom_jitter(alpha = 0.3) +
+  labs(
+    x = "Life Expectancy",
+    y = "Continent", 
+    colour = "Continent"
+  )
+  theme_bw() 
+```
+
+## Southeast US National Parks
+
 ```{r}
 # Southeast US National Parks
 se <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/se.csv")
@@ -101,13 +132,17 @@ ggplot(data = se) +
   )
 ```
 
+
+
+
 ```{r}
 visit_16 <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/visit_16.csv")
 
 x <- ggplot(data = visit_16, aes(x = state, y = visitors, fill = park_name)) + 
-  geom_bar(stat = "identity", position = "dodge")
+  geom_bar(stat = "identity", position = "dodge") +
+  theme_bw()
 
-
+x
 ```
 
 ```{r}
@@ -117,7 +152,7 @@ ggplotly(x)
 ```
 
 
-```{r}
+```{r echo=TRUE}
 
 plot <- ggplot(data = se) + 
   geom_jitter(aes(x = park_name, y = visitors, color = park_name, alpha = 0.5)) +
