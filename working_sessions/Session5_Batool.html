@@ -11,7 +11,7 @@
 
 <meta name="author" content="Batool Almarzouq" />
 
-<meta name="date" content="2022-07-14" />
+<meta name="date" content="2022-07-28" />
 
 <title>Session5_Batool</title>
 
@@ -365,7 +365,7 @@ pre code {
 
 <h1 class="title toc-ignore">Session5_Batool</h1>
 <h4 class="author">Batool Almarzouq</h4>
-<h4 class="date">2022-07-14</h4>
+<h4 class="date">2022-07-28</h4>
 
 </div>
 
@@ -393,6 +393,9 @@ pre code {
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div id="look-further-into-the-data" class="section level2">
+<h2>Look further into the data</h2>
 <pre class="r"><code>glimpse(interviews)</code></pre>
 <pre><code>## Rows: 131
 ## Columns: 14
@@ -414,9 +417,109 @@ pre code {
 
 length(unique(wall_type))</code></pre>
 <pre><code>## [1] 4</code></pre>
+</div>
+<div id="select-and-filter-the-data" class="section level2">
+<h2>Select and Filter the Data</h2>
 <pre class="r"><code>small_data &lt;- interviews %&gt;%
   select(village:respondent_wall_type, rooms) %&gt;% 
-  filter(village == &quot;God&quot;, rooms &gt; 1)</code></pre>
+  filter(village == &quot;God&quot; &amp; rooms &gt; 1)</code></pre>
+<pre class="r"><code>data &lt;- interviews %&gt;% 
+  select(affect_conflicts, memb_assoc,liv_count, no_meals) %&gt;% 
+  filter(memb_assoc == &quot;yes&quot;) </code></pre>
+<pre class="r"><code>small_data &lt;- interviews %&gt;% 
+  mutate(people_per_room = round(no_membrs / rooms))</code></pre>
+<pre class="r"><code>x &lt;- interviews %&gt;% 
+  filter(!is.na(affect_conflicts)) %&gt;% 
+  mutate(people_per_room = round(no_membrs / rooms))</code></pre>
+<pre class="r"><code>interview_total_meals &lt;- interviews %&gt;% 
+  mutate(total_meals = no_membrs * no_meals) %&gt;% 
+  filter(total_meals &gt; 20)</code></pre>
+<pre class="r"><code>interview_total_meals &lt;- mutate(interviews, total_meals = no_membrs * no_meals)
+
+y  &lt;- filter(interview_total_meals, total_meals &gt; 20)</code></pre>
+<pre class="r"><code>grouped &lt;- interviews %&gt;% 
+  group_by(village) %&gt;% 
+  summarise(mean = mean(no_membrs), max(no_membrs)) %&gt;% 
+  ungroup()</code></pre>
+<p>How many households in the survey have an average of two meals per
+day? Three meals per day? Are there any other numbers of meals
+represented?</p>
+<pre class="r"><code>interviews %&gt;%
+  group_by(village) %&gt;%
+  summarize(
+      mean_no_membrs = mean(no_membrs),
+      min_no_membrs = min(no_membrs),
+      max_no_membrs = max(no_membrs),
+      n = n()
+  )</code></pre>
+<pre><code>## # A tibble: 3 × 5
+##   village  mean_no_membrs min_no_membrs max_no_membrs     n
+##   &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;
+## 1 Chirodzo           7.08             2            12    39
+## 2 God                6.86             3            15    43
+## 3 Ruaca              7.57             2            19    49</code></pre>
+<pre class="r"><code>interviews %&gt;%
+  group_by(village) %&gt;%
+  summarise(
+      mean_no_membrs = mean(no_membrs),
+      min_no_membrs = min(no_membrs),
+      max_no_membrs = max(no_membrs),
+      count = n()
+  )</code></pre>
+<pre><code>## # A tibble: 3 × 5
+##   village  mean_no_membrs min_no_membrs max_no_membrs count
+##   &lt;chr&gt;             &lt;dbl&gt;         &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;
+## 1 Chirodzo           7.08             2            12    39
+## 2 God                6.86             3            15    43
+## 3 Ruaca              7.57             2            19    49</code></pre>
+<pre class="r"><code>interviews %&gt;%
+  group_by(village) %&gt;% 
+  summarise(mean = mean(no_membrs))</code></pre>
+<pre><code>## # A tibble: 3 × 2
+##   village   mean
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Chirodzo  7.08
+## 2 God       6.86
+## 3 Ruaca     7.57</code></pre>
+<pre class="r"><code>interviews %&gt;%
+  group_by(village) %&gt;% 
+  count()</code></pre>
+<pre><code>## # A tibble: 3 × 2
+## # Groups:   village [3]
+##   village      n
+##   &lt;chr&gt;    &lt;int&gt;
+## 1 Chirodzo    39
+## 2 God         43
+## 3 Ruaca       49</code></pre>
+<pre class="r"><code>interviews %&gt;%
+  group_by(no_meals) %&gt;%
+  summarise(
+      count = n()
+  )</code></pre>
+<pre><code>## # A tibble: 2 × 2
+##   no_meals count
+##      &lt;dbl&gt; &lt;int&gt;
+## 1        2    52
+## 2        3    79</code></pre>
+<pre class="r"><code>interviews %&gt;%
+  group_by(no_meals) %&gt;%
+  count()</code></pre>
+<pre><code>## # A tibble: 2 × 2
+## # Groups:   no_meals [2]
+##   no_meals     n
+##      &lt;dbl&gt; &lt;int&gt;
+## 1        2    52
+## 2        3    79</code></pre>
+<pre class="r"><code>interview_meals_summ &lt;- interviews %&gt;% 
+  group_by(no_meals) %&gt;% 
+  summarise(
+    count = n()
+  )
+
+
+interview_meals_count &lt;- interviews %&gt;% 
+  group_by(no_meals) %&gt;% 
+  count()</code></pre>
 </div>
 
 

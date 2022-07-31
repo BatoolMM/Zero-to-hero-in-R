@@ -57,12 +57,6 @@ data <- interviews %>%
 
 ```{r}
 
-filter(memb_assoc == "yes")
-
-```
-
-```{r}
-
 small_data <- interviews %>% 
   mutate(people_per_room = round(no_membrs / rooms))
 
