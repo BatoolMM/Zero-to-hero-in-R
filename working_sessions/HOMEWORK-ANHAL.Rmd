@@ -1,0 +1,35 @@
+---
+title: "HOMEWORK-ANHAL"
+output: html_document
+date: "2022-08-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+library(plotly)
+```
+
+```{r}
+coffee <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-07/coffee_ratings.csv")
+```
+
+
+```{r}
+
+
+co <- coffee %>%
+  filter(!is.na(variety),
+total_cup_points > 10) %>%
+  mutate(variety = fct_lump(variety, 10),sort = TRUE) 
+
+coffee %>%
+ ggplot( aes(total_cup_points, variety ))+
+  geom_boxplot()
+
+
+```
