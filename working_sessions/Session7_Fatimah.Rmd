@@ -1,0 +1,142 @@
+---
+title: "Session6_Fatimah"
+author: "Fatimah"
+date: '2022-07-14'
+output: word_document
+---
+
+## Import Data
+
+```{r}
+library(tidyverse)
+library(here)
+
+```
+
+```{r}
+
+interviews <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
+
+```
+
+```{r}
+glimpse(interviews)
+
+wall_type <- interviews$respondent_wall_type
+
+length(unique(wall_type))
+
+```
+
+```{r}
+
+small_data <- interviews %>%
+  select(village:respondent_wall_type, rooms) %>% 
+  filter(village == "God" & rooms > 1)
+  
+
+```
+
+# Ex1
+
+Using pipes, subset the interviews data to include interviews where respondents were members of an irrigation association (memb_assoc) and retain only the columns affect_conflicts, liv_count, and no_meals
+
+```{r}
+small_data3 <- interviews %>% 
+  select(memb_assoc,affect_conflicts,liv_count,no_meals) %>%
+  filter(memb_assoc == "yes")
+```
+
+### Add new column
+
+##### **round** to remove the dicemels
+
+```{r}
+small_data4 <- interviews %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+```
+
+```{r}
+is.na(interviews$affect_conflicts)
+```
+
+### to filter NA
+
+```{r}
+small_data4.1 <- interviews %>% 
+  filter(!is.na(affect_conflicts)) %>% 
+  mutate(people_per_room = round(no_membrs / rooms))
+  
+```
+
+# Ex2
+
+Create a new dataframe from the interviews data that meets the following criteria: contains a new column called total_meals containing a value that is equal to the total number of meals served in the household per day on average (no_membrs times no_meals). Include only the rows where total_meals is greater than 20 should be shown in the final dataframe.
+
+```{r}
+small_data5 <- interviews %>% 
+  mutate(total_meals = no_meals * no_membrs) %>% 
+  filter(total_meals > 20)
+```
+
+```{r}
+small_data7 <-  interviews %>% 
+  group_by(no_meals) %>% 
+  count(no_meals)
+#or
+
+small_data7 <-  interviews %>% 
+  group_by(no_meals) %>% 
+  summarise(count=n())
+
+```
+
+## Group by specific character \>\>
+
+```{r}
+small_data6 <-  interviews %>% 
+  group_by(village) %>% 
+  summarise(mean(no_membrs))
+
+```
+
+```{r}
+small_data6 <-  interviews %>% 
+  group_by(village) %>% 
+  summarise(mean=mean(no_membrs), max= max(no_membrs)) %>% 
+  ungroup()
+
+```
+
+```{r}
+A <- interviews %>% 
+  select(key_ID,village,no_membrs)
+
+B <- interviews %>% 
+  select(no_meals,key_ID)
+AB <- dplyr:: left_join(A,B,by="key_ID")
+BA <- dplyr::right_join(A,B,by="key_ID")
+
+Inner_AB <- dplyr::inner_join(A,B,by="key_ID")
+Full_AB <- dplyr::full_join(A,B,by="key_ID")
+
+```
+
+```{r}
+C <- interviews %>% 
+  select(memb_assoc,village,no_membrs,rooms) %>% 
+  filter(memb_assoc == "yes" & rooms>1)
+
+D <- interviews %>% 
+  select(memb_assoc,items_owned) %>% 
+  filter(memb_assoc =="yes" )
+CD <- dplyr:: left_join(C,D,by= "memb_assoc")
+DC <- dplyr::right_join(C,D,by= "memb_assoc")
+
+Inner_CD <- dplyr::inner_join(C,D,by= "memb_assoc")
+Full_CD <- dplyr::full_join(C,D,by= "memb_assoc")
+
+
+
+```
+

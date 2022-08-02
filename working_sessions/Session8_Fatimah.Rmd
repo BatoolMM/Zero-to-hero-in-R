@@ -1,0 +1,51 @@
+---
+title: "Session9_Fatimah"
+author: "Fatimah"
+date: '2022-08-02'
+output:
+  word_document: default
+  pdf_document:
+    toc: yes
+  html_document:
+    toc: yes
+    number_sections: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Library
+
+```{r}
+library(tidyverse)
+library(gapminder)
+library(here)
+
+```
+## plot
+  
+```{r}
+Plot_gapminder <- gapminder %>% 
+  ggplot(aes(x = log(gdpPercap), y = lifeExp, col = year, size = pop)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = lm) +
+  facet_wrap( ~ continent, scales = "free") +
+  theme_bw()
+```
+  
+## Saver results using here pakage
+  
+```{r}
+ggsave(here("results","gapminder_plt.png"),Plot_gapminder, height=20, dpi =300)
+```
+```{r}
+#gapminder_data <-  gapminder
+```
+
+```{r}
+#write_csv(gapminder_data, here("results", "gapminder_data.csv"))
+```
+
