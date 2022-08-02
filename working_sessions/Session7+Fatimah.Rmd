@@ -1,0 +1,53 @@
+---
+title: "Session7+_Fatimah"
+author: "Fatimah"
+date: '2022-07-26'
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+## Use built in datasets
+```{r}
+data()
+```
+## Using gapminder dataset pakage
+```{r}
+library(gapminder)
+```
+## import data from net
+
+```{r}
+ca <- read.csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/ca.csv")
+```
+
+```{r}
+glimpse(ca)
+```
+# 1st plot
+```{r}
+ggplot(ca,aes(x=year,y= visitors,color=park_name))+
+  geom_point(alpha=.5)+
+  labs(x="Year", y="Visitors", title= "National Park Visitors")+
+  theme(
+    legend.title = element_blank()
+    
+  )
+  
+```
+
+```{r}
+ggplot(ca,aes(x=year,y= visitors,colour=park_name))+
+  geom_point(alpha=.5)+
+  facet_wrap(~code, scales = "free")+
+  theme_bw()
+
+```
+```{r}
+ggplot(ca,aes(x=year,y= visitors,colour=state))+
+  geom_point(alpha=.5)+
+  labs(x="Year", y="Visitors", title= "Southeast States National Park Visitation")
+  theme_light()
+```
+
