@@ -1,0 +1,180 @@
+---
+title: "Session 9"
+author: "Batool Almarzouq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Homework
+
+The answer as Anhal completed:
+
+```{r}
+## libs
+library(tidyverse)
+library(tidytuesdayR)
+library(gapminder)
+library(here)
+```
+
+```{r}
+## read the dataset
+coffee_list <- tidytuesdayR::tt_load('2020-07-07')
+
+```
+
+```{r}
+## convert from list to datframes
+coffee <- do.call(rbind,coffee_list)
+coffee_list$coffee_ratings
+```
+
+```{r}
+
+coffee %>%
+  count(variety)
+```
+
+
+```{r}
+
+co2 <- coffee %>%
+  mutate(variety = fct_lump(variety, 10))
+```
+
+
+If you are new to `fct_lump()`, you can go through [this lesson](https://cran.r-project.org/web/packages/forcats/vignettes/forcats.html)
+
+```{r}
+## simple manipluation of the data
+co <- coffee %>%
+  filter(!is.na(variety), total_cup_points > 10) %>%
+  mutate(variety = fct_lump(variety, 10),sort = TRUE)
+
+```
+
+```{r}
+## plot the data 
+co %>%
+ ggplot( aes(total_cup_points, variety ))+
+  geom_boxplot()
+```
+
+## Save plots and datasets
+
+```{r}
+
+plot <- gapminder %>% 
+  ggplot(aes(x = log(gdpPercap), y = lifeExp, col = year, size = pop)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = lm) +
+  facet_wrap( ~ continent, scales = "free") +
+  theme_bw()
+
+gapminder_data <- gapminder
+
+```
+
+```{r}
+#ggsave(here("results","plot.png"), plot, width = 15, height = 10)
+
+#write_csv(gapminder_data, here("results","gapminder.csv"))
+```
+
+# Maniplutaing YAML in Markdown
+
+1- toc
+
+2- floating toc
+
+3- [themes](https://www.datadreaming.org/post/r-markdown-theme-gallery/)
+
+
+4- Changing the output
+
+
+## Use yamlthis to create the header
+
+ymlthis is an R package intended to make it easier for you to generate YAML headers
+
+`ymlthis:::launch_yaml_addin()`
+
+## Publish with RPub
+
+Easy web publishing from R. Write R Markdown documents in RStudio. Share them here on RPubs.
+
+## Exc
+
+Install prettydoc package and change the YAML header to:
+
+    output:
+     prettydoc::html_pretty:
+       theme: cayman
+       highlight: github
+       math: katex
+
+Publish your page in RPub?
+
+# Using renv
+
+Underlying the philosophy of renv is that any of your existing workflows should just work as they did before -- renv helps manage library paths (and other project-specific state) to help isolate your project's R dependencies.
+
+The general workflow when working with renv is:
+
+-   Call `renv::init()` to initialize a new project-local environment with a private R library,
+
+Work in the project as normal, installing and removing new R packages as they are needed in the project,
+
+-   Call `renv::snapshot()` to save the state of the project library to the lockfile (called renv.lock),
+
+Continue working on your project, installing and updating R packages as needed.
+
+-   Call `renv::snapshot()` again to save the state of your project library if your attempts to update R packages were successful, or call renv::restore() to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.
+
+-   `renv::restore()` to restore the state of your project from renv.lock.
+
+## Joining Datasets
+
+```{r}
+#create dataframes
+
+demographics <- data.frame(
+  id = c("P1", "P2", "P3"),
+  age = c(40, 54, 47),
+  country = c("GER", "JPN", "BRA")
+  )
+
+adverse_events <- data.frame(
+  id = c("P1", "P1", "P3", "P4"),
+  term = c("Headache", "Neutropenia", "Constipation", "Tachycardia"),
+  onset_date = c("2020-12-03", "2021-01-03", "2020-11-29", "2021-01-27")
+  )
+```
+
+```{r}
+left_join <- left_join(demographics, adverse_events, by = "id")
+
+```
+
+```{r}
+inner_join <- inner_join(demographics, adverse_events, by = "id")
+
+```
+
+```{r}
+
+right_join(demographics, adverse_events, by = "id")
+
+full_join(demographics, adverse_events, by = "id")
+
+```
+
+## Creating issues in GitHub
+
+```{r}
+sessionInfo()
+```

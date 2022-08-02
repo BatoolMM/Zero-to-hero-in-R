@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/927791/0eec7a948d5a403ab57550955b19cc72
+bundleId: https://api.rpubs.com/api/v1/document/927791/0eec7a948d5a403ab57550955b19cc72
+url: http://rpubs.com/batool/927791
+when: 1659003914.81894
+lastSyncTime: 1659003914.81895
