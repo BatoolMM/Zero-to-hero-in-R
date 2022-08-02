@@ -1,0 +1,29 @@
+---
+title: "session5_Gzyl"
+author: "gzyl"
+date: '2022-07-27'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##import data
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+interviews <- read_csv(here('data', 'SAFI_clean.csv'), na = 'NULL')
+glimpse(interviews)
+interviews$respondent_wall_type
+length(unique(interviews$respondent_wall_type))
+smalldata <- interviews %>%
+  select(village: respondent_wall_type, rooms) %>%
+  filter(village == 'God', rooms > 1)
+  
+
+```
+
