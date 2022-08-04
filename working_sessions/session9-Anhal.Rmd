@@ -1,0 +1,49 @@
+---
+title: "Session 9-Anhal"
+output: 
+   prettydoc::html_pretty:
+   toc: true
+   number_sections: true
+   theme: cayman
+   highlight: github
+   math: katex
+date: "2022-08-04"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Libraries
+
+```{r}
+library(tidyverse)
+library(gapminder)
+library(here)
+```
+
+## Ploting
+
+```{r}
+plot_gapminder <- gapminder
+
+ggplot(gapminder, aes(x =log(gdpPercap),col= year, y = lifeExp, size =pop ))+
+  geom_point(alpha=0.3, color ="#ea9999")+
+  geom_smooth(method = lm, color="#4F6AA8")+
+  facet_wrap(~continent, scales = "free")+
+  theme_bw()
+
+```
+
+### Saving data
+
+```{r}
+#ggsave(here("results","gapminder_plt.png"),plot_gapminder,height = 20, dpi = 300)
+	
+
+```
+
+```{r}
+#write_csv(plot_gapminder,here("results","plot_gapminder.cvs"))
+```
+
