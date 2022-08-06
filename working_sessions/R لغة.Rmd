@@ -1,0 +1,59 @@
+---
+title: " R لغة  "
+author: "أنهال"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+## ؟ R ماهي لغة
+
+هي لغة تستخدم لتحليل البيانات ومعالجتها وعرضها باستخدام الرسوم البيانية المختلفة وهي تحتوي على العديد من الحزم
+
+## ؟ R لماذا نستخدم لغة
+
+لأنها لغة برمجة سهلة الإستخدام ومفتوحة المصدر ومجانية وتعمل على أنظمة
+
+Mac-Windows-Linux : التشغيل المختلفة مثل
+
+## ؟ R ماهي مجالات استخدام لغة
+
+تستخدم في عدة مجالات منها : علم البيانات الضخمة وفي الذكاء الإصطناعي وفي تحليل البيانات الجينية والوراثية وأيضا في العلوم الإجتماعية
+
+Tidyverse مثال لتحليل البيانات بإستخدام حزمة
+
+1.  تنزيل الحزمة
+
+```{r}
+#install.packages("tidyverse")
+```
+
+2.  استدعاء الحزمة
+
+```{r}
+library(tidyverse)
+library(tidytuesdayR)
+```
+
+3.  قراءة البيانات
+
+```{r}
+ tuesdata <- tidytuesdayR::tt_load(2022, week = 31) 
+frogs = tuesdata$frogs
+```
+
+4.  إنشاء الرسوم البيانية
+
+```{r}
+ ggplot(frogs,aes(x=Frequency,y=HabType,colour=HabType))+
+  geom_point()+
+  theme_classic()
+```
+
+```{r}
+ggplot(frogs,aes(x=UTME_83,y=UTMN_83,col=HabType))+
+  geom_line()+
+  theme_classic()
+```
