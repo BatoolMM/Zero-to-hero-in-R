@@ -23,6 +23,7 @@ library(here)
 
 ```{r}
 ## read the dataset
+
 coffee_list <- tidytuesdayR::tt_load('2020-07-07')
 
 ```

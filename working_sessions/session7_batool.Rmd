@@ -95,16 +95,16 @@ library(plotly)
 
 data <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/se.csv")
 
-plot <- ggplot(data, aes(x = park_name, y = visitors,  col = park_name)) +
+ggplot(data, aes(x = park_name, y = visitors,  col = park_name)) +
   geom_boxplot() +
   geom_jitter(alpha = .3) +
   coord_flip() +
   theme_bw() +
-  theme(
+    theme(
     legend.position = "none"
   )
 
-ggplotly(plot)
+#ggplotly(plot)
 
 ```
 
