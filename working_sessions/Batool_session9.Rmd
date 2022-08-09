@@ -1,0 +1,65 @@
+---
+title: “the second”
+author: “Abdullah Sami”
+date: “2-8-2022”
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Libraries
+
+
+```{r}
+
+library(tidyverse)
+library(gapminder)
+library(here)
+
+```
+
+## plotting 
+
+```{r}
+
+
+plot_gapminder <- gapminder %>% 
+  ggplot(aes(x = log(gdpPercap), y = lifeExp, col = year, size = pop)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = lm) +
+  facet_wrap( ~ continent, scales = "free") +
+  theme_bw()
+
+```
+
+### Saving plots
+
+```{r}
+
+ggsave(here("results","gapminder_plt.png"), plot_gapminder, height = 20, dpi = 300)
+
+```
+
+```{r}
+
+gapminder_data <- gapminder
+
+```
+
+```{r}
+
+#write_csv(gapminder_data, "gapminder_data.csv")
+
+```
+
+```{r}
+
+#write_csv(gapminder_data, here("results", "gapminder_data.csv"))
+
+```
+
