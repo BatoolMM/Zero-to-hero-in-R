@@ -11,7 +11,7 @@
 
 <meta name="author" content="Batool Almarzouq" />
 
-<meta name="date" content="2022-08-02" />
+<meta name="date" content="2022-08-09" />
 
 <title>Session 9</title>
 
@@ -365,7 +365,7 @@ pre code {
 
 <h1 class="title toc-ignore">Session 9</h1>
 <h4 class="author">Batool Almarzouq</h4>
-<h4 class="date">2022-08-02</h4>
+<h4 class="date">2022-08-09</h4>
 
 </div>
 
@@ -377,7 +377,7 @@ pre code {
 library(tidyverse)</code></pre>
 <pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tibble  3.1.8     ✔ dplyr   1.0.9
 ## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
 ## ✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
 <pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -388,23 +388,59 @@ library(gapminder)
 library(here)</code></pre>
 <pre><code>## here() starts at /Users/batool/Documents/from-Zero-to-hero-in-r</code></pre>
 <pre class="r"><code>## read the dataset
+
 coffee_list &lt;- tidytuesdayR::tt_load(&#39;2020-07-07&#39;)</code></pre>
-<pre><code>## Only 4 Github queries remaining until 2022-08-02 02:48:35 pm +03.
-## Only 4 Github queries remaining until 2022-08-02 02:48:35 pm +03.
-## Only 4 Github queries remaining until 2022-08-02 02:48:35 pm +03.
-## Only 4 Github queries remaining until 2022-08-02 02:48:35 pm +03.
-## Only 4 Github queries remaining until 2022-08-02 02:48:35 pm +03.</code></pre>
 <pre><code>## --- Compiling #TidyTuesday Information for 2020-07-07 ----</code></pre>
-<pre><code>## Only 3 Github queries remaining until 2022-08-02 02:48:36 pm +03.</code></pre>
 <pre><code>## --- There is 1 file available ---</code></pre>
-<pre><code>## Only 2 Github queries remaining until 2022-08-02 02:48:35 pm +03.</code></pre>
 <pre><code>## --- Starting Download ---</code></pre>
-<pre><code>## Only 2 Github queries remaining until 2022-08-02 02:48:35 pm +03.</code></pre>
-<pre><code>##  Downloading file 1 of 1: `coffee_ratings.csv`</code></pre>
-<pre><code>## Only 1 Github queries remaining until 2022-08-02 02:48:36 pm +03.</code></pre>
+<pre><code>## 
+##  Downloading file 1 of 1: `coffee_ratings.csv`</code></pre>
 <pre><code>## --- Download complete ---</code></pre>
 <pre class="r"><code>## convert from list to datframes
-coffee &lt;- do.call(rbind,coffee_list)</code></pre>
+coffee &lt;- do.call(rbind,coffee_list)
+coffee_list$coffee_ratings</code></pre>
+<pre><code>## # A tibble: 1,339 × 43
+##    total_c…¹ species owner count…² farm_…³ lot_n…⁴ mill  ico_n…⁵ company altit…⁶
+##        &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
+##  1      90.6 Arabica meta… Ethiop… &quot;metad… &lt;NA&gt;    meta… 2014/2… metad … 1950-2…
+##  2      89.9 Arabica meta… Ethiop… &quot;metad… &lt;NA&gt;    meta… 2014/2… metad … 1950-2…
+##  3      89.8 Arabica grou… Guatem… &quot;san m… &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;    &lt;NA&gt;    1600 -…
+##  4      89   Arabica yidn… Ethiop… &quot;yidne… &lt;NA&gt;    wole… &lt;NA&gt;    yidnek… 1800-2…
+##  5      88.8 Arabica meta… Ethiop… &quot;metad… &lt;NA&gt;    meta… 2014/2… metad … 1950-2…
+##  6      88.8 Arabica ji-a… Brazil   &lt;NA&gt;   &lt;NA&gt;    &lt;NA&gt;  &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;   
+##  7      88.8 Arabica hugo… Peru     &lt;NA&gt;   &lt;NA&gt;    hvc   &lt;NA&gt;    richmo… &lt;NA&gt;   
+##  8      88.7 Arabica ethi… Ethiop… &quot;aolme&quot; &lt;NA&gt;    c.p.… 010/03… &lt;NA&gt;    1570-1…
+##  9      88.4 Arabica ethi… Ethiop… &quot;aolme&quot; &lt;NA&gt;    c.p.… 010/03… &lt;NA&gt;    1570-1…
+## 10      88.2 Arabica diam… Ethiop… &quot;tulla… &lt;NA&gt;    tull… 2014/15 diamon… 1795-1…
+## # … with 1,329 more rows, 33 more variables: region &lt;chr&gt;, producer &lt;chr&gt;,
+## #   number_of_bags &lt;dbl&gt;, bag_weight &lt;chr&gt;, in_country_partner &lt;chr&gt;,
+## #   harvest_year &lt;chr&gt;, grading_date &lt;chr&gt;, owner_1 &lt;chr&gt;, variety &lt;chr&gt;,
+## #   processing_method &lt;chr&gt;, aroma &lt;dbl&gt;, flavor &lt;dbl&gt;, aftertaste &lt;dbl&gt;,
+## #   acidity &lt;dbl&gt;, body &lt;dbl&gt;, balance &lt;dbl&gt;, uniformity &lt;dbl&gt;,
+## #   clean_cup &lt;dbl&gt;, sweetness &lt;dbl&gt;, cupper_points &lt;dbl&gt;, moisture &lt;dbl&gt;,
+## #   category_one_defects &lt;dbl&gt;, quakers &lt;dbl&gt;, color &lt;chr&gt;, …
+## # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names</code></pre>
+<pre class="r"><code>coffee %&gt;%
+  count(variety)</code></pre>
+<pre><code>## # A tibble: 30 × 2
+##    variety                   n
+##    &lt;chr&gt;                 &lt;int&gt;
+##  1 Arusha                    6
+##  2 Blue Mountain             2
+##  3 Bourbon                 226
+##  4 Catimor                  20
+##  5 Catuai                   74
+##  6 Caturra                 256
+##  7 Ethiopian Heirlooms       1
+##  8 Ethiopian Yirgacheffe     2
+##  9 Gesha                    12
+## 10 Hawaiian Kona            44
+## # … with 20 more rows
+## # ℹ Use `print(n = ...)` to see more rows</code></pre>
+<pre class="r"><code>co2 &lt;- coffee %&gt;%
+  mutate(variety = fct_lump(variety, 10))</code></pre>
+<p>If you are new to <code>fct_lump()</code>, you can go through <a href="https://cran.r-project.org/web/packages/forcats/vignettes/forcats.html">this
+lesson</a></p>
 <pre class="r"><code>## simple manipluation of the data
 co &lt;- coffee %&gt;%
   filter(!is.na(variety), total_cup_points &gt; 10) %&gt;%
@@ -536,13 +572,13 @@ adverse_events &lt;- data.frame(
 ## other attached packages:
 ##  [1] here_1.0.1         gapminder_0.3.0    tidytuesdayR_1.0.2 forcats_0.5.1     
 ##  [5] stringr_1.4.0      dplyr_1.0.9        purrr_0.3.4        readr_2.1.2       
-##  [9] tidyr_1.2.0        tibble_3.1.7       ggplot2_3.3.6      tidyverse_1.3.1   
+##  [9] tidyr_1.2.0        tibble_3.1.8       ggplot2_3.3.6      tidyverse_1.3.1   
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] lubridate_1.8.0  assertthat_0.2.1 rprojroot_2.0.3  digest_0.6.29   
 ##  [5] utf8_1.2.2       R6_2.5.1         cellranger_1.1.0 backports_1.4.1 
 ##  [9] reprex_2.0.1     evaluate_0.15    highr_0.9        httr_1.4.3      
-## [13] pillar_1.7.0     rlang_1.0.4      curl_4.3.2       readxl_1.4.0    
+## [13] pillar_1.8.0     rlang_1.0.4      curl_4.3.2       readxl_1.4.0    
 ## [17] rstudioapi_0.13  jquerylib_0.1.4  rmarkdown_2.14   labeling_0.4.2  
 ## [21] selectr_0.4-2    bit_4.0.4        munsell_0.5.0    broom_0.8.0     
 ## [25] compiler_4.2.0   modelr_0.1.8     xfun_0.30        pkgconfig_2.0.3 
