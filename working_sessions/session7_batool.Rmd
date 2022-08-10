@@ -1,0 +1,110 @@
+---
+title: "sesson7-batool"
+author: "Batool Almarzouq"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+```
+
+## Using bult-in datasets
+
+```{r}
+data <- diamonds
+```
+
+## Using datasets from pkgs
+
+```{r}
+
+library(gapminder)
+gapminder
+
+```
+
+## import data from the web
+
+```{r}
+
+ca <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/ca.csv")
+
+```
+
+## Explore dataset
+
+```{r}
+glimpse(ca)
+```
+
+1st Plot
+
+```{r}
+ggplot(ca, aes(x = year, y = visitors, colour = park_name)) +
+  geom_point(alpha = 0.5) +
+  labs( x= "Year", y= "Visitors", title= "California National Park Visitation" ) +
+  theme_minimal() +
+  theme(
+    legend.title = element_blank()
+  )
+
+```
+
+```{r}
+
+ggplot(ca, aes(x = year, y = visitors)) +
+  geom_point(alpha = 0.5, ) +
+  theme_light() 
+
+```
+
+```{r}
+
+unique(ca$state)
+
+```
+
+## Gap minder data 
+
+```{r}
+
+library(gapminder)
+library(tidyverse)
+
+gapminder <- gapminder
+
+ggplot(gapminder, aes(x = log(gdpPercap),col= year, y = lifeExp, size = pop)) +
+  geom_point(alpha= 0.3, color = "#8d228d") +
+  geom_smooth(method = lm) +
+  facet_wrap(~continent, scales = "free") +
+  theme_bw() 
+
+```
+## Ex.
+
+```{r}
+
+library(tidyverse)
+library(plotly)
+
+data <- read_csv("https://raw.githubusercontent.com/ScienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/se.csv")
+
+ggplot(data, aes(x = park_name, y = visitors,  col = park_name)) +
+  geom_boxplot() +
+  geom_jitter(alpha = .3) +
+  coord_flip() +
+  theme_bw() +
+    theme(
+    legend.position = "none"
+  )
+
+#ggplotly(plot)
+
+```
+
