@@ -1,0 +1,87 @@
+---
+title: "Maps & Coffee"
+author: "Fatimah"
+date: '2022-07-29'
+output: html_document
+---
+## Assignment TidyTeusday
+```{r}
+tt <- read.csv("https://raw.githubusercontent.com/jldbc/coffee-quality-database/master/data/arabica_data_cleaned.csv")
+glimpse(tt)
+```
+
+
+```{r}
+library(tidyverse)
+unique(tt$Country.of.Origin)
+```
+
+```{r}
+library(maps)
+library(mapproj)
+library(mapdata)
+library(plotly)
+```
+
+```{r}
+W <- map_data("world")
+isf <- map_data("world",
+                region = c("Jaban","India","China"))
+
+ggplot(isf, aes(x=long, y=lat, group = group, fill = region))+
+  geom_polygon()
+
+```
+
+```{r}
+
+W <- map_data("world")
+isf <- map_data("world")
+
+ggplot(isf, aes(x=long, y=lat, group = group, fill = region))+
+  geom_polygon()+
+  guides(fill = F)
+
+ggplotly()
+
+```
+
+```{r}
+A <- tt %>% 
+  group_by(Country.of.Origin) %>% 
+  summarise(mean=mean(Total.Cup.Points))
+ttA <- merge(A,isf,
+             by.x="Country.of.Origin",
+             by.y="region")
+
+
+
+ggplot(ttA, aes(x=long, y=lat, group = group, fill = mean))+
+  geom_polygon()+
+  labels(title="Average of Cup Points per Country")
+
+ggplotly()
+  
+```
+```{r}
+glimpse(tt)
+
+```
+
+
+```{r}
+ggplot(tt, aes(x=Harvest.Year, y= Total.Cup.Points, col=Color ))+
+  geom_jitter()+
+  facet_wrap(~Color, scale="free")
+```
+
+```{r}
+Bar <- tt %>% 
+  group_by(Processing.Method) %>% 
+  summarise(mean=mean(Number.of.Bags))
+ggplot(Bar,aes(x=Processing.Method,y=mean,col=Processing.Method) )+
+  geom_bar(stat="identity")+
+  theme_linedraw()
+
+```
+
