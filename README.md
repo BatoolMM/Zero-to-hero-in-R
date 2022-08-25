@@ -2,12 +2,23 @@
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-This is a course designed by Batool Almarzouq and delivered in JeelAIDM
+This is a course designed by [Batool Almarzouq](https://batool-almarzouq.netlify.app/) and delivered in JeelAIDM. All Materials are licencsed under CC-BY license. The course is delivered through Six weeks, with two sessions each week, each lasting two hours.
 
-- **Week1**: Introduction to R and RStudio
-- **Week2**: [Introduction to Git/GitHub](https://docs.google.com/presentation/d/1Og1ALvmPD-SIjEoASwb9FIZvZNMkFuvKBuQwD0Vcsng/edit?usp=sharing)
-- **Week3**: [First steps in the `tidyverse`](https://docs.google.com/presentation/d/e/2PACX-1vQYcyyvj2mV_afox3S4ichY2oefNptInh0CJUm3BRpaqJCHZq0MdeCSO54YGi78YiRgDdb4AaHW9k_b/pub?start=false&loop=false&delayms=3000)
-- **Week4**: [Introduction to `ggplot2`](https://docs.google.com/presentation/d/e/2PACX-1vTTMYSpj_uDJPy8CJ4jgohiS9VSmbebLaF4C-jEyYICzkbK3O6RKMJhdlmH3ZGzK0CloMLCsWvpW6d_/pub?start=false&loop=false&delayms=3000)
+| **Week** 	| **Session**                        	|
+|----------	|------------------------------------	|
+| 1        	| Introduction to R and Open Science 	|
+| 1        	| Project Management                 	|
+| 2        	| R Markdown                         	|
+| 2        	| GitHub in RStudio                  	|
+| 3        	| Tidydata                           	|
+| 3        	| Tidyverse                          	|
+| 4        	| ggplot2 Part 1                     	|
+| 4        	| ggplot2 Part 2                     	|
+| 5        	| YAML in R Markdown                 	|
+| 5        	| Blogging in R                      	|
+| 6        	| Reproducibility with `renv`        	|
+| 6        	| Create your first R package!       	|
+
 
 ## Partcipants in the course:
 
@@ -36,6 +47,10 @@ This work is licensed under a
 [Creative Commons Attribution 4.0 International License][cc-by].
 
 [![CC BY 4.0][cc-by-image]][cc-by]
+
+## Aknowledgment
+
+Large parts of these materials are derived from Carpentries workshop.
 
 [cc-by]: http://creativecommons.org/licenses/by/4.0/
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
