@@ -1,6 +1,8 @@
 # From Zero to hero
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7023492.svg)](https://doi.org/10.5281/zenodo.7023492)
+
 
 This is a course designed by [Batool Almarzouq](https://batool-almarzouq.netlify.app/) and delivered in JeelAIDM. All Materials are licencsed under CC-BY license. The course is delivered through Six weeks, with two sessions each week, each lasting two hours.
 
@@ -19,6 +21,10 @@ This is a course designed by [Batool Almarzouq](https://batool-almarzouq.netlify
 | 6        	| Reproducibility with `renv`        	|
 | 6        	| Create your first R package!       	|
 
+
+All Slides associated with the course can be found in [Zenodo](Batool Almarzouq. (2022, August 25). R from Zero to Hero (Arabic). Zenodo. https://doi.org/10.5281/zenodo.7023492):
+
+> Batool Almarzouq. (2022, August 25). R from Zero to Hero (Arabic). Zenodo. https://doi.org/10.5281/zenodo.7023492
 
 ## Partcipants in the course:
 
