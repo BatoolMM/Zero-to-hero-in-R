@@ -3,6 +3,10 @@
 [![CC BY 4.0][cc-by-shield]][cc-by]
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7023492.svg)](https://doi.org/10.5281/zenodo.7023492)
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/53487593/186893255-5b377005-a3ad-4c30-83cc-904c6d619acd.png" width= 70%>
+</p>
+
 
 This is a course designed by [Batool Almarzouq](https://batool-almarzouq.netlify.app/) and delivered in JeelAIDM. All Materials are licencsed under CC-BY license. The course is delivered through Six weeks, with two sessions each week, each lasting two hours.
 
