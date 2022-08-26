@@ -1,4 +1,4 @@
-# From Zero to hero
+# Zero to Hero in R
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7023492.svg)](https://doi.org/10.5281/zenodo.7023492)
