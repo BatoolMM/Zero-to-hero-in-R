@@ -26,7 +26,7 @@ This is a course designed by [Batool Almarzouq](https://batool-almarzouq.netlify
 | 6        	| Create your first R package!       	|
 
 
-All Slides associated with the course can be found in [Zenodo](Batool Almarzouq. (2022, August 25). R from Zero to Hero (Arabic). Zenodo. https://doi.org/10.5281/zenodo.7023492):
+All Slides associated with the course can be found in [Zenodo](https://doi.org/10.5281/zenodo.7023492):
 
 > Batool Almarzouq. (2022, August 25). R from Zero to Hero (Arabic). Zenodo. https://doi.org/10.5281/zenodo.7023492
 
