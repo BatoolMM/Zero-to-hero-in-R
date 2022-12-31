@@ -33,6 +33,7 @@ All Slides associated with the course can be found in [Zenodo](https://doi.org/1
 ## Partcipants in the course:
 
 - Mona Alsharif 
+- Omar Alsharif
 - Abdullah Sami
 - basma almllah
 - Hani Almohammadi
