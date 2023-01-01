@@ -1,0 +1,181 @@
+---
+title: "Codes"
+output:
+  pdf_document: default
+  html_document: default
+  word_document: default
+date: "2022-12-31"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Only  i will write the codes, she explaned about how to connect Rstudio with Git.
+
+How to call library:
+```{r echo=TRUE}
+library(ggplot2)
+library(tinytex)
+
+"how to call function in Library"
+
+"to get working directoy:"
+getwd()
+"اقدر اكتب بالعربي"
+"في نفس الشنك فيه يمين فوق علامه اعدادات فيها خيارات اتحكم في الشنك"
+"عدلتها من اعدادت الشنك اني اخليها ينفذ الكود و يظهر لي المخرجات"
+
+```
+
+```{r}
+"if i writr like this: ##some thing, the text will be bigger in Knit"
+
+"numberical: 12.5
+integer : 5
+string: حروف
+factor: male
+logical: True,false"
+
+
+```
+
+
+```{r}
+x <- 5
+typeof(x)
+y <- "Omar"
+typeof(y)
+
+A <- "55"
+typeof(A)
+
+is.character(y)
+is.double(y)
+Q <- FALSE
+typeof(Q)
+w <- 2/0
+
+w
+
+
+```
+
+
+```{r}
+v <- c(1,2.5,4,6)
+typeof(v)
+
+M <- c(2.2,3,"A","b")
+typeof(M)
+"الأولويه للأسترنج"
+
+DS <- c(TRUE,3,7.2)
+typeof(DS)
+
+```
+
+```{r}
+"عشان اعرف عن مكتبه و طريقه استخدامها لازم اكتب استفهام و اسم المكتبه  في الكونسول الي تحت هذي النافذه"
+?seq
+??seq
+
+
+DSD <- seq(1:20)
+FDS <- seq(4,20, by=2)
+
+
+```
+change the data type
+```{r}
+x
+typeof(5)
+"the below code make me able to change the data type from double to integer, just use: as.type of data i want"
+as.integer(x)
+
+Dateee <- 1-1-2023
+typeof(Dateee)
+as.character.Date(Dateee)
+as.Date(Dateee)
+```
+
+
+```{r}
+
+"
+3**9 :
+ثلاثه اوس تسعه
+Sqrt(9) = 3 :
+الجذر
+3+3*5 = 18
+هنا الاولوليه للضرب
+اذا حاب اجمع او ف اسوي كذى:
+(3+5)*3
+-
+Titoruial ((تدريب عملي من نفس الار ستوديو ، يكون محله جمب المتغيرا الي نعرفه فوق يمين
+
+"
+
+```
+
+```{r}
+"here pacage: it is make me able to open my project from multible devices with out mistakes in working directory
+"
+
+
+```
+
+##import data
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+read_csv(here("data","SAFI_clean.csv"))
+Datafile <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
+
+```
+```{r}
+Datafile %>% typeof(Datafile,interview_date)
+"data type:"
+glimpse(Datafile)
+Datafile$no_membrs
+no_of_member <- Datafile$no_membrs
+view(no_of_member)
+"showed what is unique in the data"
+unique(no_of_member)
+unique(Datafile)
+
+"length: show as number how many unique value:"
+length(unique(no_of_member)) 
+length(unique(Datafile))
+
+Datafile %>% 
+  select(village,no_membrs, months_lack_food)
+
+Only <- Datafile %>% 
+  select(village,no_membrs, months_lack_food)
+"this code below with -c means delet the selected data"
+delet_few <- Datafile %>% 
+  select(-c(village,no_membrs))
+
+"this code below with -c means delet the selected data, using : to select From .. To .."
+
+delet_few_fwe <- Datafile %>% 
+  select(-c(village:no_membrs))
+"using select with filter to chose what i need from the dataset"
+SSelect <- Datafile %>% 
+  select(village:years_liv) %>% 
+  filter(village == "God",
+         years_liv > 24)
+
+Datafile$village=="God"
+
+```
+
+```{r}
+
+
+```
+
