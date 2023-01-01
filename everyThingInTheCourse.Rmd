@@ -140,8 +140,11 @@ Datafile <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
 Datafile %>% typeof(Datafile,interview_date)
 "data type:"
 glimpse(Datafile)
+
 Datafile$no_membrs
+
 no_of_member <- Datafile$no_membrs
+
 view(no_of_member)
 "showed what is unique in the data"
 unique(no_of_member)
@@ -175,7 +178,80 @@ Datafile$village=="God"
 ```
 
 ```{r}
+samlldata <- Datafile %>% 
+  select(village:respondent_wall_type,rooms) %>% 
+  filter(village == "God" & rooms > 1 )
 
 
+Task <- Datafile %>% 
+  select(memb_assoc,affect_conflicts,liv_count,no_meals) %>% 
+  filter(memb_assoc == "yes")
+
+filter(Datafile, memb_assoc == "yes")
+```
+```{r}
+"mutate to generat a new column with our needs from the data"
+
+Datafile %>% 
+  mutate(pepole_per_room = no_membrs / rooms)
+
+"
+it is function that change the number to integer:
+round()
+"
+newd1<- Datafile %>% 
+  mutate(pepole_per_room = round(no_membrs / rooms))
+
+```
+
+```{r}
+"
+this function showed to me the NA using factr yes or no
+is.na(data$the_column_name)
+TRUE= NA, FALSE = Real value
+"
+
+is.na(Datafile$memb_assoc)
+"to delete missing vlaue"
+
+misss <- Datafile %>% select(memb_assoc)
+
+clean_miss <- misss %>% select(memb_assoc) %>% 
+  filter(!is.na(memb_assoc))
+"
+if i used is.na with out ! = it will delete the real value and keep missing value"
+
+
+```
+
+```{r}
+"after cleaning"
+after_clean_and_filter<- Datafile %>% 
+  filter(!is.na(affect_conflicts)) %>% 
+  mutate(pepole_per_room = round(no_membrs / rooms))
+"i will see the data in after_clean_and_filter less than the original data becuse i delet the missing value and the result for the filter is right."
+
+
+
+```
+
+
+```{r}
+after_clean_and_filter <- after_clean_and_filter %>% 
+  mutate(Total_meal = no_membrs * no_meals) %>% 
+  filter(Total_meal > 20)
+
+after_clean_and_filter
+
+view(after_clean_and_filter)
+
+"another way to write mutate"
+
+grouped <- Datafile %>% 
+  group_by(village) %>% 
+  summarise(mean = mean(no_membrs), max= max(no_membrs)) %>% 
+  ungroup()
+
+view(grouped)
 ```
 
