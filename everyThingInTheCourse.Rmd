@@ -60,7 +60,7 @@ w
 
 
 ```
-
+# use c , type of, 
 
 ```{r}
 v <- c(1,2.5,4,6)
@@ -74,7 +74,7 @@ DS <- c(TRUE,3,7.2)
 typeof(DS)
 
 ```
-
+# sequence data and using ?,?? fro exploaring libraryes
 ```{r}
 "عشان اعرف عن مكتبه و طريقه استخدامها لازم اكتب استفهام و اسم المكتبه  في الكونسول الي تحت هذي النافذه"
 ?seq
@@ -86,7 +86,7 @@ FDS <- seq(4,20, by=2)
 
 
 ```
-change the data type
+#change the data type
 ```{r}
 x
 typeof(5)
@@ -99,7 +99,7 @@ as.character.Date(Dateee)
 as.Date(Dateee)
 ```
 
-
+#explain
 ```{r}
 
 "
@@ -118,6 +118,7 @@ Titoruial ((تدريب عملي من نفس الار ستوديو ، يكون م
 
 ```
 
+#explain
 ```{r}
 "here pacage: it is make me able to open my project from multible devices with out mistakes in working directory
 "
@@ -133,9 +134,10 @@ library(here)
 
 ```{r}
 read_csv(here("data","SAFI_clean.csv"))
-Datafile <- read_csv(here("data","SAFI_clean.csv"), na = "NULL")
+Datafile <- read.csv(here("data","SAFI_clean.csv"), na = "NULL")
 
 ```
+
 ```{r}
 Datafile %>% typeof(Datafile,interview_date)
 "data type:"
@@ -253,5 +255,37 @@ grouped <- Datafile %>%
   ungroup()
 
 view(grouped)
+```
+
+
+```{r}
+"code from me: How to creat data in table with spesific values"
+dff <- data.frame(
+  Name = c ("a", "B", "C"),
+  Age = c (5, 42, 37)
+)
+
+```
+```{r}
+"Usualy we use summary after group by"
+Datafile %>%
+  group_by(no_meals) %>% 
+    summarise(count = n())
+
+
+
+Datafile %>%
+  group_by(no_meals) %>% 
+    count()
+
+```
+
+import ggplot
+```{r}
+library(ggplot2)
+```
+# ggplot
+```{r}
+
 ```
 
