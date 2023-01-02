@@ -286,6 +286,62 @@ library(ggplot2)
 ```
 # ggplot
 ```{r}
+ggplot(Datafile, aes(x=no_of_member, y=no_of_member))+
+  geom_point() +
+  geom_smooth() +
+  facet_wrap(~) +
+  coord_flip() +
+  theme(legend.position = "none")
 
+Datafile
+```
+
+#Data from R studio to train
+```{r}
+data()
+```
+
+```{r}
+install.packages("gapminder")
+library(gapminder)
+gapminder
+```
+```{r}
+gapData <- gapminder
+```
+#import the data from the web
+```{r}
+ca <- read_csv("https://raw.githubusercontent.com/scienceParkStudyGroup/r-lesson-based-on-ohi-data-training/gh-pages/data/ca.csv")
+ca
+```
+#exploaring data method
+```{r}
+glimpse(ca)
+str(ca)
+```
+#st plot
+```{r}
+ggplot(
+  
+  ca, aes(x=year, y= visitors, colour = park_name, size =region )
+) +
+  geom_point(alpha = 0.5) +
+  geom_smooth() +
+  theme(legend.position = "none") +
+  labs(x="year", y="visitors", title="Californai national park visitation")+
+  theme_minimal() +
+  theme(
+    legend.title = element_blank()
+    
+  )
+```
+
+```{r}
+ggplot(
+  
+  ca, aes(x=year, y= visitors, colour = park_name, size =region )
+) +
+  geom_smooth() +
+  facet_wrap(~ code, scales = "free")
 ```
 
