@@ -339,7 +339,7 @@ ggplot(
 ```{r}
 ggplot(
   
-  ca, aes(x=year, y= visitors, colour = park_name, size =region )
+  ca, aes(x=year(), y= visitors, colour = park_name, size =region )
 ) +
   geom_smooth() +
   facet_wrap(~ code, scales = "free") + 
@@ -354,6 +354,57 @@ unique(ca$state)
 "اضافه اسم الي ملف الى ملف 
 ignor
 في خانه الملفات يمين تحت يخليه ماينرفع الى الجت هب حتى لو سويت كوممت"
-
+view(gapminder)
 ```
+
+```{r}
+  ggplot(gapminder, aes(x=log(gdpPercap),col= year, y= lifeExp, size =pop )
+) +
+  geom_point(alpha = 0.5, color = "red" )+
+  geom_smooth(method = lm)+
+  facet_wrap(~ continent, scale = "free")+
+  theme_bw()
+```
+```{r}
+install.packages("ggplotAssist")
+"بعد م اثبتها بتطلع لي في 
+Addins
+اعلى شي فووق تحت 
+Help
+اختار منها 
+ggplot Assit
+ ثم بتفتح لي رابط مثل
+ 192.186.1.1
+ فيها صفحه  تساعدني تماما على 
+ انشاء 
+ ggplot
+ للداتا عن طريق يوزر انتر فيس، و اعرف عن طريقها كل خصائص ال
+ ggplot
+ 
+"
+```
+
+
+```{r}
+ pplloott<- ggplot(gapminder, aes(x=log(gdpPercap),col= year, y= lifeExp, size =pop )
+) +
+  geom_point(alpha = 0.5, color = "red" )+
+  geom_jitter()+ 
+  geom_smooth(method = lm)+
+  theme_bw()
+ggplotly(pplloott)
+
+"plotly
+هي مكتبه تول الاشكال البلوتات الى اشكال تفاعليه
+ولكن عشان تشتغل 
+لازم
+ادخل كود البلوت في
+<- 
+ثم ادخله في كود
+ggplotly(اسم الي  حطيته)
+
+"
+library(plotly)
+```
+
 
