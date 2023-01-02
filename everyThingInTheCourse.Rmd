@@ -348,5 +348,12 @@ ggplot(
 
 ```{r}
 "R studio dral with arabic languge with xlsx bettwe than csv"
+
+ca$state
+unique(ca$state)
+"اضافه اسم الي ملف الى ملف 
+ignor
+في خانه الملفات يمين تحت يخليه ماينرفع الى الجت هب حتى لو سويت كوممت"
+
 ```
 
