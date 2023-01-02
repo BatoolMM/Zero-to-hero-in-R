@@ -342,6 +342,11 @@ ggplot(
   ca, aes(x=year, y= visitors, colour = park_name, size =region )
 ) +
   geom_smooth() +
-  facet_wrap(~ code, scales = "free")
+  facet_wrap(~ code, scales = "free") + 
+  theme_bw()
+```
+
+```{r}
+"R studio dral with arabic languge with xlsx bettwe than csv"
 ```
 
