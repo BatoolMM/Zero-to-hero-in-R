@@ -498,5 +498,47 @@ renv::restore()
 
 ```
 
+#joinning data
+##dplyr: full_join, inner_join, left_join, right_join, Anti_jon
+```{r}
+library(tidyverse)
 
+
+adverse_events <- data.frame(
+  id = c("P1", "P1", "P3", "p4"),
+  term = c("headache","neutropenia","constipation","tachycardia"),
+  onset_date = c("2020-12-03", "2021-01-03", "2020-11-29", "2021-01-27")
+)
+
+inputData <- data.frame(
+  id = c("P1", "p2","p3"),
+  age = c("40", "54","47"),
+  country = c("GER","JPN","BRA")
+)
+
+
+left_join <- dplyr::left_join(inputData,adverse_events, by = "id")
+right_join <- dplyr::right_join(adverse_events,inputData, by = "id")
+full_join <- dplyr::full_join(adverse_events,inputData, by = "id")  
+inner_joinL <- dplyr::inner_join(inputData,adverse_events, by= "id")
+inner_joinR <- dplyr::inner_join(adverse_events,inputData, by= "id")
+```
+
+#best practice: change wide data taple to long one, i will explan how to change the long to wide wich is not recommended.
+```{r}
+dd <- data.frame(
+  contry = c("Anagola","india","monologs"),
+  "1999" = c("800","20100","450"),
+  "2000" = c("750","25650","512"),
+  "2001" = c("925","26800","510"),
+  "2002" = c("1020","27255","586")
+)
+
+corrrect <- dd %>% tidyr::pivot_longer(cols = X1999:X2002, names_to = "Year", values_to = "Values")
+
+notCorrect <- corrrect %>% tidyr::pivot_wider(names_from = Year, values_from = Values)
+
+ddd <- dd %>% tidyr::pivot_longer(cols = X1999:X2002, names_to = "Year", values_to = "Values")
+
+```
 
