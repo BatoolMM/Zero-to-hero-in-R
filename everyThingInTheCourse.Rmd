@@ -446,4 +446,16 @@ write_csv(ca, here("results","ca.csv"))
 ```{r}
 
 ```
+#ymlthis: it used to write yml code so need it to wrok with out errors becuse yml is sensetive to the spaces, after activate ymlthis lib it will show in Addins in the upper side of the Rstudio.
+
+```{r}
+library(ymlthis)
+
+```
+
+#"the other way to creat them is : file - new filre - R mark down - then i will choose them - select any theme i like"
+```{r}
+
+```
+
 

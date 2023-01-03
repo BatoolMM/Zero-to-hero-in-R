@@ -1,0 +1,12 @@
+---
+author: alsharifomar@outlook.com
+date: '`r format(Sys.Date())`'
+title: Untitled
+output:
+  html_document:
+    toc_float: 'true'
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
