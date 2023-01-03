@@ -418,7 +418,11 @@ plotly rstat install
 اكتب اسمه في قوقل و اكتب
 sheetcheat.
 "
+
+"https://rweekly.org/
+this is source from learning and being collabiraive with R community"
 ```
+
 
 
 
