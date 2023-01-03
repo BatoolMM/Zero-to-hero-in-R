@@ -440,6 +440,10 @@ write_csv(ca, here("results","ca.csv"))
 ```
 #"https://www.datadreaming.org/post/r-markdown-theme-gallery/" "this links has muti thems i can use in YAML ( in the top of this page)", to publish my paper in internet for free,  1- kint the file 2- upside right ,3- RPubs then publsh.
 ```{r}
+```
+# library(prettydoc): it is used for design the yaml  and it has a lot of thems i can check the website: "https://www.datadreaming.org/post/r-markdown-theme-gallery/" to know more about it
+
+```{r}
 
 ```
 
