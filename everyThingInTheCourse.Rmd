@@ -426,6 +426,9 @@ this is source from learning and being collabiraive with R community"
 
 
 
-
+#How to save data after minpulation
+```{r}
+write_csv(ca, "results/ca.csv")
+```
 
 
