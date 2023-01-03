@@ -1,0 +1,33 @@
+---
+title: "Distill codes"
+description: |
+  A short description of the post.
+author:
+  - name: Nora Jones
+    url: https://example.com/norajones
+date: 2023-01-03
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+#for creating Distill post: in the console down below, write distill::creat_post("title the post"), then the content here. "If i want to write in about.html i need to write in it and if i want to upload images i need to put the image in the same folder for exampile: i want to upload image in about me, the app will creat folder to me names as *about.html* then i need to put the image in this folder becuse i want to upload image in it."
+```{r}
+library(tidyverse)
+```
+
+#2 to upload this file to Github i need to use library (usethis), then insert "usethis::use_git()" then the package will as :Is it ok to commit it?
+i chose 1 as yes, Done.
+```{r}
+
+```
+
