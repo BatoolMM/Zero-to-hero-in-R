@@ -467,3 +467,36 @@ library(ymlthis)
 
 
 
+<!-- totaly new project -->
+#new project
+```{r}
+library(usethis)
+library(devtools)
+library(roxygen2)
+library(janitor)
+library(renv)
+
+```
+
+#to take a snapshot from the file with every thing even the pacakages version, so if any one open this project after 100 year he will be able to load every thing and work correctly.
+```{r}
+renv::init()
+renv::snapshot()
+```
+restore the data captured.
+```{r}
+renv::restore()
+```
+
+
+
+#init to start this pacage practical,snapshot: take image to the work enviroment ,to restore -> to restore the data captured. (it is work in the sequence.)
+```{r}
+renv::init()
+renv::snapshot()
+renv::restore()
+
+```
+
+
+
