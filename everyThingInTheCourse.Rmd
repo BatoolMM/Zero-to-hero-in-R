@@ -1,14 +1,14 @@
 ---
 title: "Codes"
 output:
-  word_document:
-    toc: yes
   html_document:
     toc: yes
     theme: darkly
     toc_float: yes
     number_section: yes
     word_document: defult
+  word_document:
+    toc: yes
 date: "2022-12-31"
 ---
 
@@ -438,7 +438,7 @@ write_csv(ca, here("results","ca.csv"))
 ```{r}
 "changes in Yaml: which is in the top of this page"
 ```
-"https://www.datadreaming.org/post/r-markdown-theme-gallery/" "this links has muti thems i can use in YAML ( in the top of this page" )
+#"https://www.datadreaming.org/post/r-markdown-theme-gallery/" "this links has muti thems i can use in YAML ( in the top of this page)", to publish my paper in internet for free,  1- kint the file 2- upside right ,3- RPubs then publsh.
 ```{r}
 
 ```
