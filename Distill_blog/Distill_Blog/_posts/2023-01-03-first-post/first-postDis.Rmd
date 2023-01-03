@@ -30,8 +30,8 @@ i chose 1 as yes, Done.
 ```{r}
 
 ```
-#with each changes in this pages we need to use Knit or From Build upper side right click Build Website.
+#with each changes in this pages we need to use Knit or From Build upper side right click Build Website them commit it to Github.
 ```{r}
 
 ```
-
+#to make Git hub my host i need to : 1- go to the library i want host 2- go to setting to that library 3- page 4- From "Branch" chose "Main" "/dock" then Save.
