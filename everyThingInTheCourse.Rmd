@@ -384,6 +384,16 @@ ggplot Assit
 "
 ```
 
+#"plotly
+هي مكتبه تول الاشكال البلوتات الى اشكال تفاعليه
+ولكن عشان تشتغل 
+لازم
+ادخل كود البلوت في
+<- 
+ثم ادخله في كود
+ggplotly(اسم الي  حطيته)
+
+", "How to save plot and the output i made, dpi = وضوح وجوده الصوره, hight = "auto", width = "auto""
 
 ```{r}
  pplloott<- ggplot(gapminder, aes(x=log(gdpPercap),col= year, y= lifeExp, size =pop )
@@ -394,16 +404,7 @@ ggplot Assit
   theme_bw()
 ggplotly(pplloott)
 
-"plotly
-هي مكتبه تول الاشكال البلوتات الى اشكال تفاعليه
-ولكن عشان تشتغل 
-لازم
-ادخل كود البلوت في
-<- 
-ثم ادخله في كود
-ggplotly(اسم الي  حطيته)
-
-"
+ggsave("results/pplloott.png",pplloott, dpi = 300 )
 library(plotly)
 ```
 
@@ -426,6 +427,5 @@ this is source from learning and being collabiraive with R community"
 
 
 
-```{r}
-```
+
 
