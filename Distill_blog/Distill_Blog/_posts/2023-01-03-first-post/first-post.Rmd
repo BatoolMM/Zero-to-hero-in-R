@@ -25,7 +25,8 @@ Learn more about using Distill at <https://rstudio.github.io/distill>.
 library(tidyverse)
 ```
 
-#2 to upload this file to Github i need to use library (usethis), then insert "usethis::use_git()" then yes yes 
+#2 to upload this file to Github i need to use library (usethis), then insert "usethis::use_git()" then the package will as :Is it ok to commit it?
+i chose 1 as yes, Done.
 ```{r}
 
 ```
