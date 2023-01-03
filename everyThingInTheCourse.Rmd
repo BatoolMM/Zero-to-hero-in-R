@@ -1,9 +1,14 @@
 ---
 title: "Codes"
 output:
-  pdf_document: default
-  html_document: default
-  word_document: default
+  word_document:
+    toc: yes
+  html_document:
+    toc: yes
+    theme: darkly
+    toc_float: yes
+    number_section: yes
+    word_document: defult
 date: "2022-12-31"
 ---
 
@@ -86,17 +91,16 @@ FDS <- seq(4,20, by=2)
 
 
 ```
-#change the data type
+#change the data type,"the below code make me able to change the data type from double to integer, just use: as.type of data i want"
 ```{r}
-x
+
 typeof(5)
-"the below code make me able to change the data type from double to integer, just use: as.type of data i want"
+
 as.integer(x)
 
 Dateee <- 1-1-2023
 typeof(Dateee)
 as.character.Date(Dateee)
-as.Date(Dateee)
 ```
 
 #explain
@@ -137,10 +141,9 @@ read_csv(here("data","SAFI_clean.csv"))
 Datafile <- read.csv(here("data","SAFI_clean.csv"), na = "NULL")
 
 ```
+#"data type:"
 
 ```{r}
-Datafile %>% typeof(Datafile,interview_date)
-"data type:"
 glimpse(Datafile)
 
 Datafile$no_membrs
@@ -289,7 +292,6 @@ library(ggplot2)
 ggplot(Datafile, aes(x=no_of_member, y=no_of_member))+
   geom_point() +
   geom_smooth() +
-  facet_wrap(~) +
   coord_flip() +
   theme(legend.position = "none")
 
@@ -302,10 +304,9 @@ data()
 ```
 
 ```{r}
-install.packages("gapminder")
 library(gapminder)
-gapminder
 ```
+
 ```{r}
 gapData <- gapminder
 ```
@@ -339,7 +340,7 @@ ggplot(
 ```{r}
 ggplot(
   
-  ca, aes(x=year(), y= visitors, colour = park_name, size =region )
+  ca, aes(x=year, y= visitors, colour = park_name, size =region )
 ) +
   geom_smooth() +
   facet_wrap(~ code, scales = "free") + 
@@ -365,9 +366,8 @@ view(gapminder)
   facet_wrap(~ continent, scale = "free")+
   theme_bw()
 ```
-```{r}
-install.packages("ggplotAssist")
-"بعد م اثبتها بتطلع لي في 
+"install.packages("ggplotAssist")
+بعد م اثبتها بتطلع لي في 
 Addins
 اعلى شي فووق تحت 
 Help
@@ -382,6 +382,8 @@ ggplot Assit
  ggplot
  
 "
+```{r}
+
 ```
 
 #"plotly
@@ -395,6 +397,8 @@ ggplotly(اسم الي  حطيته)
 
 ", "How to save plot and the output i made, dpi = وضوح وجوده الصوره, hight = "auto", width = "auto""
 
+"ggplotly(pplloott)
+"
 ```{r}
  pplloott<- ggplot(gapminder, aes(x=log(gdpPercap),col= year, y= lifeExp, size =pop )
 ) +
@@ -402,9 +406,9 @@ ggplotly(اسم الي  حطيته)
   geom_jitter()+ 
   geom_smooth(method = lm)+
   theme_bw()
-ggplotly(pplloott)
 
-ggsave("results/pplloott.png",pplloott, dpi = 300 )
+
+ggsave(here("results","h0ere.png"), pplloott, dpi = 300 )
 library(plotly)
 ```
 
@@ -428,7 +432,14 @@ this is source from learning and being collabiraive with R community"
 
 #How to save data after minpulation
 ```{r}
-write_csv(ca, "results/ca.csv")
+write_csv(ca, here("results","ca.csv"))
 ```
 
+```{r}
+"changes in Yaml: which is in the top of this page"
+```
+"https://www.datadreaming.org/post/r-markdown-theme-gallery/" "this links has muti thems i can use in YAML ( in the top of this page" )
+```{r}
+
+```
 
