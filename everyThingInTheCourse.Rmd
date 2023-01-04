@@ -526,6 +526,8 @@ inner_joinR <- dplyr::inner_join(adverse_events,inputData, by= "id")
 
 #best practice: change wide data taple to long one, i will explan how to change the long to wide wich is not recommended.
 ```{r}
+library(tidyverse)
+
 dd <- data.frame(
   contry = c("Anagola","india","monologs"),
   "1999" = c("800","20100","450"),
@@ -540,5 +542,18 @@ notCorrect <- corrrect %>% tidyr::pivot_wider(names_from = Year, values_from = V
 
 ddd <- dd %>% tidyr::pivot_longer(cols = X1999:X2002, names_to = "Year", values_to = "Values")
 
+```
+#training
+```{r}
+dd %>% tidyr::pivot_longer(cols = X1999:X2002, names_to = "Year", values_to = "Values")
+```
+
+```{r}
+  
+
+```
+
+
+```{r}
 ```
 
