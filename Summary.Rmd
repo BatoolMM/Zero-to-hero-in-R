@@ -46,8 +46,7 @@ fontsize: 12pt","usethis::browse_github()","devtools::github_pull()","roxygen2::
 #Save
 ```{r}
 write_csv(Final,here("Summary_omar/Output","Lib.csv"))
-Final
-
+View(Final)
 ```
 
 
