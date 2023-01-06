@@ -1,0 +1,22 @@
+library_name,library_function,code_exampile,library_documentation
+tidyverse,collection of R packages designed for data science,read_csv(),https://www.tidyverse.org/packages/
+tidyverse(tidyr),provides a set of functions that help you get to tidy data,tidyr::pivot_longer(),https://www.rdocumentation.org/packages/tidyr/versions/1.2.1
+tidyverse(ggplot2),produce the plots,"ggplot(Datafile, aes(x=no_of_member, y=no_of_member))+ geom_point()",https://ggplot2.tidyverse.org/reference/
+here, enable easy file referencing in project-oriented workflows,setwd(),https://here.r-lib.org/
+plotly,creating interactive web-based graphs,plotly(graph_name),https://plotly.com/r/
+prettydoc,Creating tiny yet beautiful documents and vignettes from R Markdown,"prettydoc::html_pretty:
+    theme: cayman
+    highlight: github",https://prettydoc.statr.me/
+ymlthis,"help you write YAML metadata for R Markdown documents and related tools like blogdown, bookdown, and pkgdown","author: alsharifomar@outlook.com
+date: '`r format(Sys.Date())`'
+title: Untitled
+output: html_document
+description: This YAML for explination purpose for DR.Batool course
+fontsize: 12pt",https://pyyaml.org/wiki/PyYAMLDocumentation
+usethis,facilitates interactive workflows for R project creation and development,usethis::browse_github(),https://usethis.r-lib.org/
+devtools,make package development easier by providing R functions that simplify and expedite common tasks,devtools::github_pull(),https://devtools.r-lib.org/
+roxygen2,to make documenting your code as easy as possible,"roxygen2::init()
+",https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html
+janitor,examining and cleaning dirty data,"janitor::clean_names()
+",https://www.rdocumentation.org/packages/janitor/versions/2.1.0
+renv,dependency manager,renv::snapshot(),https://rstudio.github.io/renv/articles/renv.html
