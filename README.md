@@ -1,6 +1,6 @@
 # Zero to Hero in R
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
@@ -82,6 +82,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://abdullah-hr.com/"><img src="https://avatars.githubusercontent.com/u/60039758?v=4?s=100" width="100px;" alt="abdullah shalaan"/><br /><sub><b>abdullah shalaan</b></sub></a><br /><a href="#ideas-0abdullah0sami0" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-0abdullah0sami0" title="Content">🖋</a></td>
       <td align="center"><a href="https://github.com/OmarBinSaad"><img src="https://avatars.githubusercontent.com/u/108903779?v=4?s=100" width="100px;" alt="Omar Bin Saad"/><br /><sub><b>Omar Bin Saad</b></sub></a><br /><a href="#content-OmarBinSaad" title="Content">🖋</a> <a href="#blog-OmarBinSaad" title="Blogposts">📝</a></td>
       <td align="center"><a href="https://github.com/Fabuali"><img src="https://avatars.githubusercontent.com/u/108146329?v=4?s=100" width="100px;" alt="Fatimah Abuali"/><br /><sub><b>Fatimah Abuali</b></sub></a><br /><a href="#question-Fabuali" title="Answering Questions">💬</a></td>
+      <td align="center"><a href="https://gitlab.pavlovia.org/gzyl"><img src="https://avatars.githubusercontent.com/u/67930059?v=4?s=100" width="100px;" alt="Ghozayel Elotteebi"/><br /><sub><b>Ghozayel Elotteebi</b></sub></a><br /><a href="#question-Ghozayel" title="Answering Questions">💬</a></td>
     </tr>
   </tbody>
 </table>

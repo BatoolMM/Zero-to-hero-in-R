@@ -34,6 +34,15 @@
       "contributions": [
         "question"
       ]
+    },
+    {
+      "login": "Ghozayel",
+      "name": "Ghozayel Elotteebi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67930059?v=4",
+      "profile": "https://gitlab.pavlovia.org/gzyl",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
