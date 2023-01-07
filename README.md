@@ -1,6 +1,6 @@
 # Zero to Hero in R
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
@@ -84,6 +84,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="https://github.com/Fabuali"><img src="https://avatars.githubusercontent.com/u/108146329?v=4?s=100" width="100px;" alt="Fatimah Abuali"/><br /><sub><b>Fatimah Abuali</b></sub></a><br /><a href="#question-Fabuali" title="Answering Questions">💬</a></td>
       <td align="center"><a href="https://gitlab.pavlovia.org/gzyl"><img src="https://avatars.githubusercontent.com/u/67930059?v=4?s=100" width="100px;" alt="Ghozayel Elotteebi"/><br /><sub><b>Ghozayel Elotteebi</b></sub></a><br /><a href="#question-Ghozayel" title="Answering Questions">💬</a></td>
       <td align="center"><a href="https://github.com/Anhal-77"><img src="https://avatars.githubusercontent.com/u/108335179?v=4?s=100" width="100px;" alt="Anhal"/><br /><sub><b>Anhal</b></sub></a><br /><a href="#question-Anhal-77" title="Answering Questions">💬</a></td>
+      <td align="center"><a href="https://github.com/Azza3bdullah"><img src="https://avatars.githubusercontent.com/u/83520785?v=4?s=100" width="100px;" alt="AZZA ABDULLAH S. ALGHAMDI"/><br /><sub><b>AZZA ABDULLAH S. ALGHAMDI</b></sub></a><br /><a href="#question-Azza3bdullah" title="Answering Questions">💬</a></td>
     </tr>
   </tbody>
 </table>
