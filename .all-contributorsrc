@@ -15,6 +15,16 @@
         "ideas",
         "content"
       ]
+    },
+    {
+      "login": "OmarBinSaad",
+      "name": "Omar Bin Saad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108903779?v=4",
+      "profile": "https://github.com/OmarBinSaad",
+      "contributions": [
+        "content",
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
