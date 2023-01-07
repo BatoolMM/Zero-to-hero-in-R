@@ -1,6 +1,6 @@
 # Zero to Hero in R
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
@@ -80,6 +80,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center"><a href="https://abdullah-hr.com/"><img src="https://avatars.githubusercontent.com/u/60039758?v=4?s=100" width="100px;" alt="abdullah shalaan"/><br /><sub><b>abdullah shalaan</b></sub></a><br /><a href="#ideas-0abdullah0sami0" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-0abdullah0sami0" title="Content">🖋</a></td>
+      <td align="center"><a href="https://github.com/OmarBinSaad"><img src="https://avatars.githubusercontent.com/u/108903779?v=4?s=100" width="100px;" alt="Omar Bin Saad"/><br /><sub><b>Omar Bin Saad</b></sub></a><br /><a href="#content-OmarBinSaad" title="Content">🖋</a> <a href="#blog-OmarBinSaad" title="Blogposts">📝</a></td>
     </tr>
   </tbody>
 </table>
