@@ -1,0 +1,58 @@
+---
+title: "Summary"
+output: html_document
+date: "2023-01-06"
+---
+
+# Call the library we need
+```{r}
+library(tidyverse)
+library(here)
+```
+
+# Input data in data frame.
+```{r}
+Final<- data.frame(
+  library_name = c("tidyverse","tidyverse(tidyr)","tidyverse(ggplot2)","here","plotly","prettydoc","ymlthis","usethis","devtools"
+                   
+                   ,"roxygen2","janitor","renv"),
+  
+  
+  
+  library_function = c("collection of R packages designed for data science","provides a set of functions that help you get to tidy data","produce the plots"," enable easy file referencing in project-oriented workflows","creating interactive web-based graphs"
+ ,"Creating tiny yet beautiful documents and vignettes from R Markdown"
+                       
+                       ,"help you write YAML metadata for R Markdown documents and related tools like blogdown, bookdown, and pkgdown","facilitates interactive workflows for R project creation and development",
+ 
+ "make package development easier by providing R functions that simplify and expedite common tasks","to make documenting your code as easy as possible","examining and cleaning dirty data","dependency manager"),
+ 
+ 
+   code_exampile = c("read_csv()","tidyr::pivot_longer()","ggplot(Datafile, aes(x=no_of_member, y=no_of_member))+ geom_point()","setwd()","plotly(graph_name)","prettydoc::html_pretty:
+    theme: cayman
+    highlight: github","author: alsharifomar@outlook.com
+date: '`r format(Sys.Date())`'
+title: Untitled
+output: html_document
+description: This YAML for explination purpose for DR.Batool course
+fontsize: 12pt","usethis::browse_github()","devtools::github_pull()","roxygen2::init()
+"
+,"janitor::clean_names()
+","renv::snapshot()"),
+
+ 
+    library_documentation = c("https://www.tidyverse.org/packages/","https://www.rdocumentation.org/packages/tidyr/versions/1.2.1","https://ggplot2.tidyverse.org/reference/",  "https://here.r-lib.org/","https://plotly.com/r/","https://prettydoc.statr.me/","https://pyyaml.org/wiki/PyYAMLDocumentation","https://usethis.r-lib.org/","https://devtools.r-lib.org/","https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html","https://www.rdocumentation.org/packages/janitor/versions/2.1.0","https://rstudio.github.io/renv/articles/renv.html")
+)
+```
+#Save
+```{r}
+write_csv(Final,here("Summary_omar/Output","Lib.csv"))
+View(Final)
+```
+
+
+
+
+
+
+
+
