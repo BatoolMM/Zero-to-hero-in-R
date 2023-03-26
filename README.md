@@ -48,6 +48,7 @@ All Slides associated with the course can be found in [Zenodo](https://doi.org/1
 - Ghozayel Alotaibi
 - AZZA ABDULLAH S. ALGHAMDI
 - Iman Al Hasani
+- Faisal Al Huzali
 
 ## Contributing :two_hearts:
 - If you like it, leave your star in this project :star2:
